@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números de Grupo | Distrito 17 Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top:8px solid #2f3fa0;
+  border-bottom:8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:24px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Buscador en el encabezado */
+.search-box {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+
+.search-box input {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-box button {
+  background: #2f3fa0;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-box button:hover {
+  background: #16256b;
+}
+
+.hero{
+  max-width:1100px;
+  margin:20px auto;
+  background:#e6f0ff;
+  border:3px solid #5a5a5a;
+  border-radius:60px;
+  text-align:center;
+  padding:30px;
+}
+
+.hero h1{font-size:3rem;}
+.hero h2{margin-top:10px;font-weight:normal;}
+
+/* Estilos de la tabla de grupos */
+table{
+  width:90%;
+  max-width:1000px;
+  margin:30px auto;
+  border-collapse:collapse;
+  background:white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th{
+  background:#2f3fa0;
+  color:white;
+  padding:14px;
+  text-align:left;
+  font-size:1.05rem;
+}
+
+td{
+  padding:12px 14px;
+  border-bottom:1px solid #eeeeee;
+}
+
+tr:nth-child(even){
+  background-color:#f9f9f9;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+  .search-box {margin-left: 0; width: 100%; justify-content: center;}
+  table{width:98%;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="esto-es-aa.html">Esto es AA</a></li>
+<li><a href="calendario.html">Calendario</a></li>
+<li><a href="eventos.html">Eventos y Asambleas</a></li>
+<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+<li><a href="revistas.html">Revistas</a></li>
+<li><a href="documentos.html">Documentos del Distrito</a></li>
+<li><a href="profesionales.html">Para Profesionales</a></li>
+<li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+<li><a href="numeros-grupo.html">Números de grupo</a></li>
+<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+<li><a href="mapas.html">Mapas</a></li>
+<li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li></ul>
+</nav>
+
+<!-- Barra de Búsqueda -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Buscar texto...">
+  <button onclick="buscarEnPagina()">Buscar</button>
+</div>
+
+</div>
+</header>
+
+<section class="hero">
+<h1>Números de Grupo Distrito 17</h1>
+<h2>Códigos OSG de los grupos activos del Distrito 17</h2>
+</section>
+
+<table> 
+  <thead>
+    <tr> 
+      <th>Código OSG</th> 
+      <th>Grupo</th> 
+      <th>Ciudad</th> 
+    </tr> 
+  </thead>
+  <tbody>
+    <tr> 
+      <td>000023177</td> 
+      <td>8 de Mayo</td> 
+      <td>Homestead</td> 
+    </tr> 
+    <tr> 
+      <td>000023238</td> 
+      <td>Aceptacion</td> 
+      <td>Hialeah</td> 
+    </tr> 
+    <tr> 
+      <td>000023275</td> 
+      <td>Alegria de Vivir</td> 
+      <td>Hialeah</td> 
+    </tr> 
+    <tr> 
+      <td>000023452</td> 
+      <td>Arbol de Vida</td> 
+      <td>Margate</td> 
+    </tr> 
+    <tr> 
+      <td>000023678</td> 
+      <td>Central</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000023768</td> 
+      <td>Cuento Contigo</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000022982</td> 
+      <td>Doce Pasos</td> 
+      <td>Hialeah</td> 
+    </tr> 
+    <tr> 
+      <td>000023956</td> 
+      <td>El Despertar</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000023976</td> 
+      <td>Lenguaje del Corazon</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000024136</td> 
+      <td>Encuentro</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000024269</td> 
+      <td>Fe y Esperanza</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000024432</td> 
+      <td>Gratitud en Sobriedad</td> 
+      <td>Ft Lauderdale</td> 
+    </tr> 
+    <tr> 
+      <td>116518</td> 
+      <td>La Gran Manzana</td> 
+      <td>Miami Beach</td> 
+    </tr> 
+    <tr> 
+      <td>000024953</td> 
+      <td>Liberacion</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000025447</td> 
+      <td>Nueva Vida</td> 
+      <td>Coral Gables</td> 
+    </tr> 
+    <tr> 
+      <td>000044463</td> 
+      <td>Nuevo Despertar</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000025871</td> 
+      <td>Nuevo Horizonte</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000025912</td> 
+      <td>Nuevo Porvenir</td> 
+      <td>Pembroke Pines</td> 
+    </tr> 
+    <tr> 
+      <td>000026609</td> 
+      <td>Quinta Tradicion</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000044472</td> 
+      <td>Quinto Paso</td> 
+      <td>Miami</td> 
+    </tr> 
+    <tr> 
+      <td>000026924</td> 
+      <td>Renacer en Sobriedad</td> 
+      <td>Miami</td> 
+    </tr> 
+  </tbody>
+</table>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+<script>
+function buscarEnPagina() {
+  const texto = document.getElementById("searchInput").value;
+  if (texto) {
+    window.find(texto);
+  }
+}
+</script>
+
+</body>
+</html>

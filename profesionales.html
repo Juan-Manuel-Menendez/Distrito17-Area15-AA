@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Profesionales | Distrito 17 - Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top: 8px solid #2f3fa0;
+  border-bottom: 8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Contenido Principal */
+.main-container{
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Estructura general de dos columnas */
+.content-layout {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  gap: 35px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #1f3fa0;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Columna Derecha: Bloque azul arriba y los 4 botones abajo con simetría */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Banner profesional superior derecho */
+.banner-ccp {
+  background: linear-gradient(135deg, #2b7082 0%, #489fb5 100%);
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.banner-ccp h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.banner-box-inner {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.banner-box-inner h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.banner-box-inner p {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Los 4 botones organizados en dos renglones de dos debajo del bloque azul */
+.prof-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.prof-btn {
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 22px 15px;
+  border-radius: 35px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+}
+
+.prof-btn:hover {
+  background: #2f3fa0;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  max-width: 1400px;
+  margin: auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:992px){
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+  .prof-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="esto-es-aa.html">Esto es AA</a></li>
+<li><a href="calendario.html">Calendario</a></li>
+<li><a href="eventos.html">Eventos y Asambleas</a></li>
+<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+<li><a href="revistas.html">Revistas</a></li>
+<li><a href="documentos.html">Documentos del Distrito</a></li>
+<li><a href="profesionales.html">Para Profesionales</a></li>
+<li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+<li><a href="numeros-grupo.html">Números de grupo</a></li>
+<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+<li><a href="mapas.html">Mapas</a></li>
+<li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li></ul>
+</nav>
+</div>
+</header>
+
+<main class="main-container">
+    
+    <div class="content-layout">
+        
+        <!-- Columna Izquierda: Textos explicativos -->
+        <div class="text-column">
+            <h1>Para la comunidad profesional de atención médica</h1>
+            
+            <p>Alcohólicos Anónimos (AA) colabora estrechamente con la comunidad profesional, sirviendo como recurso confiable para el apoyo continuo en la recuperación. Profesionales como médicos, psicólogos, consejeros en adicciones, trabajadores sociales y clérigos suelen derivar a personas a AA cuando detectan conductas problemáticas con el alcohol.</p>
+
+            <p>Por ejemplo, un médico de atención primaria podría sugerir Alcohólicos Anónimos a un paciente que muestre signos de dependencia del alcohol, mientras que un terapeuta que trate a alguien por ansiedad o depresión podría recomendar Alcohólicos Anónimos si el abuso del alcohol es un factor contribuyente.</p>
+
+            <p>De igual manera, un trabajador social de una agencia de servicios familiares podría derivar a un padre a Alcohólicos Anónimos (AA) como parte de un plan más amplio de recuperación o reunificación familiar. Estas derivaciones ayudan a conectar el tratamiento clínico con el apoyo entre pares, ofreciendo a las personas un camino hacia la sobriedad sostenida a través del programa de Doce Pasos de AA.</p>
+        </div>
+        
+        <!-- Columna Derecha: Bloque azul arriba y los 4 botones abajo -->
+        <div class="right-column">
+            <div class="banner-ccp">
+                <h2>Podemos Ayudar...</h2>
+                <div class="banner-box-inner">
+                    <h3>Alcohólicos Anónimos</h3>
+                    <p>Comité de Cooperación con la Comunidad Profesional (CCP)</p>
+                </div>
+            </div>
+
+            <!-- Los 4 botones -->
+            <div class="prof-buttons">
+                <a href="https://www.youtube.com/watch?v=aMDNOW74eB0" target="_blank" rel="noopener noreferrer" class="prof-btn">UN VÍDEO PARA PROFESIONALES SANITARIOS</a>
+                <a href="https://www.aa.org/es/una-carta-abierta-profesionales-de-la-salud" target="_blank" rel="noopener noreferrer" class="prof-btn">CARTA ABIERTA A LOS PROFESIONALES DE LA SALUD</a>
+                <a href="https://www.aa.org/es/contact-cpc" target="_blank" rel="noopener noreferrer" class="prof-btn">AA PUEDE BRINDAR APOYO A LOS PROFESIONALES</a>
+                <a href="https://www.aa.org/es/about-aa" target="_blank" rel="noopener noreferrer" class="prof-btn">BOLETÍN INFORMATIVO PARA PROFESIONALES</a>
+            </div>
+        </div>
+        
+    </div>
+
+</main>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

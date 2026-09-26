@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revistas | Distrito 17 - Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top: 8px solid #2f3fa0;
+  border-bottom: 8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Contenido Principal */
+.content-container{
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.content-container h1 {
+  text-align: center;
+  font-size: 2.3rem;
+  color: #16256b;
+  margin-bottom: 40px;
+}
+
+/* Cuadrícula para las dos revistas en paralelo */
+.magazines-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.mag-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mag-card img {
+  width: 38%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.mag-info {
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mag-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Botones de acción de revistas */
+.mag-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mag-btn {
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.mag-btn:hover {
+  background-color: #2f3fa0;
+  transform: translateY(-2px);
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:60px;
+}
+
+.footer-grid{
+  max-width: 1400px;
+  margin: auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:900px){
+  .magazines-grid{grid-template-columns:1fr;}
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .mag-card{flex-direction:column; text-align: center;}
+  .mag-card img {width: 60%; margin: 0 auto;}
+  .mag-info {width: 100%;}
+  .footer-grid{grid-template-columns:1fr;}
+  .content-container h1 {font-size: 1.8rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="esto-es-aa.html">Esto es AA</a></li>
+<li><a href="calendario.html">Calendario</a></li>
+<li><a href="eventos.html">Eventos y Asambleas</a></li>
+<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+<li><a href="revistas.html">Revistas</a></li>
+<li><a href="documentos.html">Documentos del Distrito</a></li>
+<li><a href="profesionales.html">Para Profesionales</a></li>
+<li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+<li><a href="numeros-grupo.html">Números de grupo</a></li>
+<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+<li><a href="mapas.html">Mapas</a></li>
+<li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li></ul>
+</nav>
+</div>
+</header>
+
+<main class="content-container">
+  <h1>Revistas de Alcohólicos Anónimos</h1>
+
+  <div class="magazines-grid">
+    <!-- Revista Grapevine -->
+    <div class="mag-card">
+      <img src="imagenes/grapevine.png" alt="AA Grapevine">
+      <div class="mag-info">
+        <div class="mag-description">
+          <strong>AA Grapevine</strong> es la revista internacional de Alcohólicos Anónimos. Escrita, editada, ilustrada y leída por miembros de AA[cite: 5].
+        </div>
+        <div class="mag-buttons">
+          <a href="https://www.aagrapevine.org" target="_blank" rel="noopener noreferrer" class="mag-btn">VISITAR SITIO</a>
+          <a href="https://www.aagrapevine.org/store" target="_blank" rel="noopener noreferrer" class="mag-btn">SUSCRIBIR</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Revista La Viña -->
+    <div class="mag-card">
+      <img src="imagenes/lavina.png" alt="La Viña">
+      <div class="mag-info">
+        <div class="mag-description">
+          <strong>El AA La Viña</strong> es el periódico internacional de Alcohólicos Anónimos. Escrito, editado, ilustrado y leído por miembros de AA[cite: 5].
+        </div>
+        <div class="mag-buttons">
+          <a href="https://www.aalavina.org" target="_blank" rel="noopener noreferrer" class="mag-btn">VISITE EL WEB</a>
+          <a href="https://www.aalavina.org/store" target="_blank" rel="noopener noreferrer" class="mag-btn">SUSCRÍBETE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
