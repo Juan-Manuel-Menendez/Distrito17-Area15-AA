@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -162,4 +163,210 @@ footer{
 </footer>
 
 </body>
+=======
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario | Distrito 17 Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top:8px solid #2f3fa0;
+  border-bottom:8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:24px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Buscador en el encabezado */
+.search-box {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+
+.search-box input {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-box button {
+  background: #2f3fa0;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-box button:hover {
+  background: #16256b;
+}
+
+.hero{
+  max-width:1100px;
+  margin:20px auto;
+  background:#e6f0ff;
+  border:3px solid #5a5a5a;
+  border-radius:60px;
+  text-align:center;
+  padding:30px;
+}
+
+.hero h1{font-size:3rem;}
+.hero h2{margin-top:10px;font-weight:normal;}
+
+.calendar-container{
+  max-width:1200px;
+  margin:30px auto;
+  padding:0 15px;
+  text-align:center;
+}
+
+.calendar-container iframe{
+  width:100%;
+  height:700px;
+  border:none;
+  border-radius:15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+  .search-box {margin-left: 0; width: 100%; justify-content: center;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="calendario.html">Calendario</a></li>
+<li><a href="eventos.html">Eventos y Asambleas</a></li>
+<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+<li><a href="documentos.html">Documentos del Distrito</a></li>
+<li><a href="profesionales.html">Para Profesionales</a></li>
+<li><a href="https://area15aa.org/7th-tradition-contributions/" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+<li><a href="numeros-grupo.html">Números de grupo</a></li>
+<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+</ul>
+</nav>
+
+<!-- Barra de Búsqueda -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Buscar texto...">
+  <button onclick="buscarEnPagina()">Buscar</button>
+</div>
+
+</div>
+</header>
+
+<section class="hero">
+<h1>Calendario</h1>
+<h2>Actividades, reuniones y eventos del Distrito 17</h2>
+</section>
+
+<main class="calendar-container">
+  <!-- Tu Google Calendar intacto -->
+  <iframe 
+  src="https://calendar.google.com/calendar/embed?src=distrito17area15aa%40gmail.com&ctz=America%2FNew_York&hl=es" 
+  style="border: 0" width="100%" height="700" frameborder="0" scrolling="no">
+  </iframe>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+<script>
+function buscarEnPagina() {
+  const texto = document.getElementById("searchInput").value;
+  if (texto) {
+    window.find(texto);
+  }
+}
+</script>
+
+</body>
+>>>>>>> 803dd035752881af82b964c8d3b3e35fd8ab1341
 </html>
