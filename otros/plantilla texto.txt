@@ -1,0 +1,26 @@
+CodigoGSO,Grupo,Ciudad,DireccionGrupo,Horario,RSG,Telefono,Email,Observaciones
+000023177,8 de Mayo,Homestead,27 South Krome Avenue,,Eloy Velazques,7862172136,,Falta horario
+000023238,Aceptacion,Hialeah,5426 Palm Ave,,Wilfredo,7862519462,,Falta horario
+000023275,Alegria de Vivir,Hialeah,527 E 9th St #5,Lunes a Domingo 7:30 PM,Hector R Garcia,7863808629,GarciaRolando324@gmail.com,Revisar direccion
+000023452,Arbol de Vida,Margate,7660 Margate Blvd,Lunes a Domingo 8 PM; Domingo 9:30 AM,Maria Infante,7543663651,carolinfant@hotmail.com,Completo
+000023678,Central,Miami,9600 SW 8th St #49,7 AM;12 PM;5:30 PM;8 PM,Pedro,7862230440,peelitotrascendido@gmail.com,Completo
+000023768,Cuento Contigo,Miami,1412 W Flagler St A,,Hector,7863125638,,Falta horario
+000022982,Doce Pasos,Hialeah,1183 W 29th St C,Lunes a Domingo 8 PM a 9:30 PM,Efrain Valle,7863815649,efrainvallecillo47@gmail.com,Completo
+000023956,El Despertar,Miami,15160 SW 136th St #19,Lunes a Sabado 7:30 PM a 9 PM,Francisco Agurcia,7868793056,ikeragurcia@yahoo.com,Completo
+000023976,Lenguaje del Corazon,Miami,953 SW 87th Ave #951B,,Alberto,7862714843,,Falta horario
+000024136,Encuentro,Miami,2290 NW 28th St 2nd Floor,,Lisandro Suarez,7868061514,soloporwalter@gmail.com,Falta horario
+000024269,Fe y Esperanza,Miami,407 SW 12th Ave,,Ramiro,3059792057,,Falta horario
+000024432,Gratitud en Sobriedad,Ft Lauderdale,5110 South State Road 7,Lunes a Domingo 8 PM a 10 PM,Adalberto,9546695064,adalbertoquintana1984@gmail.com,Completo
+000116518,La Gran Manzana,Miami Beach,1718 Bay Rd,,INO,7873403926,,Falta horario
+000024953,Liberacion,Miami,314 SW 8th Ave,Lun-Vie 8 PM a 10 PM; Sab-Dom 6 PM a 8 PM,Elvin Diaz,7868620346,elvindiaz19851985@gmail.com,Completo
+000025447,Nueva Vida,Coral Gables,5545 SW 8th St #207,,Juan Menendez,8137359529,juan_m_menendez@yahoo.com,Falta horario
+000044463,Nuevo Despertar,Miami,2335 NW 27th Ave,Lun a Sab 8 PM a 10 PM,Jose Antonio Pina,7863262964,pina.naguanagua@gmail.com,Completo
+000025871,Nuevo Horizonte,Miami,1918 W Flagler St F,,,,,Pendiente
+000025912,Nuevo Porvenir,Pembroke Pines,1601 North Palm Avenue 209D,Lunes a Sabado 8 PM a 9:30 PM; Domingo 7 PM a 8:30 PM,Cesar Sevilla,7865548253,cesarfishingnets@hotmail.com,Completo
+000026609,Quinta Tradicion,Miami,2148 NW 17th Ave,,Oscar,7862379966,,Falta horario
+000044472,Quinto Paso,Miami,13550 N Kendall Dr 270D,Diario 12 PM a 1 PM y 7 PM a 8:30 PM,Daniel Zadunaisky,3053420267,aadaniel@yahoo.com,Completo
+000026924,Renacer en Sobriedad,Miami,1883 W Flagler St #1,Lunes a Domingo 8 PM a 10 PM,Juan Solorzano,7863151688,juansolorzano12345@gmail.com,Completo
+000028554,Un Dia a la Vez,Miami,32 SW 21st Ct,,,,,Pendiente
+000029124,Unidad,Homestead,24821 S Dixie Hwy,,Antonio,7863797495,,Falta horario
+000029601,Viviendo Sobrio,Miami,133 Ponce de Leon,Lun-Vie 7:30 PM a 9 PM; Sab 6:30 PM a 8 PM,Enrique Santamaria,7864257135,enriqueliott@hotmail.com,Completo
+`

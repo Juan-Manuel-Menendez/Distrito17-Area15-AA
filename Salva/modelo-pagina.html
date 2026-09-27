@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distrito 17 | Área 15 AA</title>
+
+<style>
+:root{
+ --azul:#1f5560;
+ --dorado:#d5b05a;
+ --gris:#f4f4f4;
+ --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+ background:#fff;
+ border-top:8px solid #2f3fa0;
+ border-bottom:8px solid #2f3fa0;
+}
+
+.nav-container{
+ max-width:1400px;
+ margin:auto;
+ display:flex;
+ align-items:center;
+ gap:30px;
+ padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+ display:flex;
+ flex-wrap:wrap;
+ list-style:none;
+ gap:24px;
+}
+
+nav a{
+ text-decoration:none;
+ color:#222;
+ font-size:1rem;
+ transition:0.3s;
+}
+
+nav a:hover{
+ color:#16256b;
+}
+
+.hero{
+ max-width:1100px;
+ margin:10px auto;
+ background:#e6f0ff;
+ border:3px solid #5a5a5a;
+ border-radius:60px;
+ text-align:center;
+ padding:30px;
+}
+
+.hero h1{font-size:3rem;}
+.hero h2{margin-top:20px;font-weight:normal;}
+
+.help-btn{
+ display:inline-block;
+ background:#2f3fa0;
+ color:#fff;
+ text-decoration:none;
+ padding:15px 45px;
+ border-radius:40px;
+ margin-top:15px;
+ font-size:1.2rem;
+ font-weight:bold;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.help-phones{
+ text-align:center;
+ margin:5px;
+}
+
+.quick-links{
+ max-width:1000px;
+ margin:40px auto;
+}
+
+.quick-links h2{text-align:center;margin-bottom:25px;}
+
+.link-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr 1fr;
+ gap:10px;
+}
+
+.link-grid ul li{
+ margin-bottom:20px;
+}
+
+.link-grid a{
+ color:#1f4ed8;
+}
+
+.calendar{
+ max-width:1200px;
+ margin:50px auto;
+ text-align:center;
+}
+
+.calendar iframe{
+ width:100%;
+ height:700px;
+ border:none;
+}
+
+.district-meeting{
+ max-width:1000px;
+ margin:15px auto;
+ background:#ffffff;
+ padding:8px;
+ border-radius:15px;
+}
+.district-meeting h2{
+    font-size:1.4rem;
+}
+footer{
+ background:#111;
+ color:white;
+ padding:40px;
+ margin-top:50px;
+}
+
+.footer-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr 1fr;
+ gap:25px;
+}
+
+@media(max-width:768px){
+ .nav-container{flex-direction:column;}
+ .link-grid,.footer-grid{grid-template-columns:1fr;}
+ .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+<nav>
+<ul>
+<li><a href="#">Inicio</a></li>
+<li><a href="#calendario">Calendario</a></li>
+<li><a href="#eventos">Eventos y Asambleas</a></li>
+<li><a href="#gsr">Centro RSG y MCD</a></li>
+<li><a href="#documentos">Documentos</a></li>
+<li><a href="#comites">Comités</a></li>
+<li><a href="#profesionales">Para Profesionales</a></li>
+<li><a href="#contribuciones">Contribuciones</a></li>
+<li><a href="#nosotros">Acerca de Nosotros</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<h1>Numeros de Grupo Distrito 17</h1>
+<h2>Códigos OSG de los grupos activos del Distrito 17</h2>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasar el Mensaje | Distrito 17 | Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --azul-oscuro:#133942;
+  --azul-claro:#2b6d7a;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top: 8px solid #2f3fa0;
+  border-bottom: 8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Encabezado de la Sección */
+.page-header{
+  max-width:1100px;
+  margin:30px auto 20px auto;
+  text-align:center;
+  padding:20px;
+}
+
+.page-header h1{
+  font-size:2.5rem;
+  color:#1f3fa0;
+  margin-bottom:10px;
+}
+
+.page-header p{
+  font-size:1.1rem;
+  color:#555;
+  line-height:1.5;
+}
+
+/* Cuadrícula de Comités tipo Tarjetas */
+.committees-grid{
+  max-width:1300px;
+  margin:30px auto 60px auto;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:25px;
+  padding:0 20px;
+}
+
+.card{
+  border-radius:8px;
+  padding:30px 25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+}
+
+/* Variantes de colores de tarjetas */
+.card-dark-blue{
+  background-color: #162a6b;
+  color: #fff;
+}
+
+.card-light-blue{
+  background-color: #3b7ac8;
+  color: #fff;
+}
+
+.card-light{
+  background-color: #f8f9fa;
+  color: #222;
+  border: 1px solid #ddd;
+}
+
+.card h3{
+  font-size: 1.35rem;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.card p{
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.card-light h3{
+  color: #162a6b;
+}
+
+.card-light p{
+  color: #444;
+}
+
+.read-more{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: opacity 0.2s;
+}
+
+.card-dark-blue .read-more,
+.card-light-blue .read-more{
+  color: #fff;
+}
+
+.card-light .read-more{
+  color: #2f3fa0;
+}
+
+.read-more:hover{
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  max-width: 1400px;
+  margin: auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+  .page-header h1{font-size:2rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="esto-es-aa.html">Esto es AA</a></li>
+  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
+  <li><a href="mapas.html">Mapas</a></li>
+  <li><a href="calendario.html">Calendario</a></li>
+  <li><a href="eventos.html">Eventos y Asambleas</a></li>
+  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+  <li><a href="documentos.html">Documentos del Distrito</a></li>
+  <li><a href="numeros-grupo.html">Números de grupo</a></li>
+  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+  <li><a href="revistas.html">Revistas</a></li>
+  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+  <li><a href="profesionales.html">Para Profesionales</a></li>
+  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="page-header">
+  <h1>Pasar el Mensaje</h1>
+  <p>Comités de servicio dedicados a llevar el mensaje de recuperación a quienes enfrentan barreras, se encuentran en instituciones o necesitan conocer el programa de Alcohólicos Anónimos.</p>
+</section>
+
+<div class="committees-grid">
+  <!-- Tarjeta 1: Accesibilidad -->
+  <div class="card card-dark-blue">
+    <div>
+      <h3>Comité de Accesibilidad</h3>
+      <p>Sirve para ayudar a quienes tienen barreras significativas que deben superarse para garantizar la plena participación en A.A.</p>
+    </div>
+    <a href="https://area15aa.org/accessibilities/" target="_blank" rel="noopener noreferrer" class="read-more">LEER MÁS &gt;</a>
+  </div>
+
+  <!-- Tarjeta 2: Tratamiento e Instituciones -->
+  <div class="card card-light">
+    <div>
+      <h3>Comité de Tratamiento e Instituciones</h3>
+      <p>Trabaja para llevar el mensaje de recuperación a los alcohólicos que se encuentran en centros de tratamiento, hospitales y entornos médicos o de asistencia.</p>
+    </div>
+    <a href="https://www.aa.org/treatment-committees" target="_blank" rel="noopener noreferrer" class="read-more">LEER MÁS &gt;</a>
+  </div>
+
+  <!-- Tarjeta 3: Información Pública -->
+  <div class="card card-light-blue">
+    <div>
+      <h3>Comité de Información Pública (IP)</h3>
+      <p>Encargado de informar al público en general y a los medios de comunicación sobre qué es A.A., cómo funciona y dónde se puede encontrar ayuda.</p>
+    </div>
+    <a href="https://www.aa.org/public-information-committees" target="_blank" rel="noopener noreferrer" class="read-more">LEER MÁS &gt;</a>
+  </div>
+
+  <!-- Tarjeta 4: Cooperación con la Comunidad Profesional (CCP) -->
+  <div class="card card-dark-blue">
+    <div>
+      <h3>Comité de Cooperación con la Comunidad Profesional (CCP)</h3>
+      <p>Trabaja para informar a los profesionales que probablemente entren en contacto con personas con problemas de alcoholismo sobre Alcohólicos Anónimos.</p>
+    </div>
+    <a href="https://www.aa.org/Cooperation-with-the-Professional-Community" target="_blank" rel="noopener noreferrer" class="read-more">LEER MÁS &gt;</a>
+  </div>
+
+  <!-- Tarjeta 5: Correcciones -->
+  <div class="card card-light">
+    <div>
+      <h3>Comité de Correcciones</h3>
+      <p>Los comités penitenciarios trabajan para llevar el mensaje de recuperación de Alcohólicos Anónimos a los alcohólicos encarcelados.</p>
+    </div>
+    <a href="https://www.aa.org/corrections-committees" target="_blank" rel="noopener noreferrer" class="read-more">LEER MÁS &gt;</a>
+  </div>
+</div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentos del Distrito | Distrito 17 A.A.</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top:8px solid #2f3fa0;
+  border-bottom:8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:24px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Estilos de la sección Documentos */
+.main-container{
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.page-title{
+  color:#2f3fa0;
+  font-size:2.2rem;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.page-subtitle{
+  color:#555;
+  font-size:1.1rem;
+  margin-bottom:35px;
+  text-align:center;
+}
+
+.docs-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:20px;
+}
+
+.doc-card{
+  background:#fff;
+  border-top:5px solid #2f3fa0;
+  border-radius:12px;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow:0 4px 10px rgba(0,0,0,0.06);
+}
+
+.doc-icon{
+  font-size:2.5rem;
+  margin-bottom:12px;
+}
+
+.doc-card h3{
+  color:#111;
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+
+.doc-card p{
+  color:#666;
+  font-size:0.95rem;
+  line-height:1.4;
+  margin-bottom:20px;
+}
+
+.btn-doc{
+  display:block;
+  text-align:center;
+  background:#2f3fa0;
+  color:#fff;
+  padding:12px;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
+  transition:background 0.3s;
+}
+
+.btn-doc:hover{
+  background:#16256b;
+}
+
+.btn-disabled{
+  background:#aaa;
+  cursor:not-allowed;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="calendario.html">Calendario</a></li>
+<li><a href="#eventos">Eventos y Asambleas</a></li>
+<li><a href="#gsr">Centro RSG y MCD</a></li>
+<li><a href="documentos.html">Documentos del Distrito</a></li>
+<li><a href="#comites">Comités</a></li>
+<li><a href="#profesionales">Para Profesionales</a></li>
+<li><a href="#contribuciones">Contribuciones</a></li>
+<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main class="main-container">
+  <h1 class="page-title">Documentos Oficiales del Distrito 17</h1>
+  <p class="page-subtitle">Consulta e información interna de servicio para la mesa, servidores, comités y RSG.</p>
+
+  <div class="docs-grid">
+
+    <!-- 1. MANUAL DE PROCEDIMIENTOS -->
+    <div class="doc-card">
+      <div>
+        <div class="doc-icon">📘</div>
+        <h3>Manual de Procedimientos</h3>
+        <p>Estructura de servicio, comités, funciones de los servidores de la mesa y pautas del Distrito 17.</p>
+      </div>
+      <a href="https://docs.google.com/document/d/1dFNnAJHaTI1tQW5EOk9dKCHNNS5Y_tYhh0N4AlojT8w/edit?usp=drivesdk&ouid=118383164928505658988" target="_blank" class="btn-doc">
+        Abrir Documento
+      </a>
+    </div>
+
+    <!-- 2. ACTAS DE REUNIONES -->
+    <div class="doc-card">
+      <div>
+        <div class="doc-icon">📑</div>
+        <h3>Actas de Reuniones</h3>
+        <p>Minutas, informes de tesorería y registro de acuerdos del distrito.</p>
+      </div>
+      <a href="#" class="btn-doc btn-disabled">Próximamente</a>
+    </div>
+
+    <!-- 3. ESTRUCTURA DE REUNIONES -->
+    <div class="doc-card">
+      <div>
+        <div class="doc-icon">📋</div>
+        <h3>Estructura de Reuniones</h3>
+        <p>Formato y guía del orden del día para las sesiones de trabajo y de estudio.</p>
+      </div>
+      <a href="#" class="btn-doc btn-disabled">Próximamente</a>
+    </div>
+
+    <!-- 4. INVENTARIO DE SERVICIO -->
+    <div class="doc-card">
+      <div>
+        <div class="doc-icon">📊</div>
+        <h3>Inventario de Servicio</h3>
+        <p>Guía de evaluación anual para revisar el estado del servicio en el distrito.</p>
+      </div>
+      <a href="#" class="btn-doc btn-disabled">Próximamente</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

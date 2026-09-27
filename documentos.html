@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentos del Distrito | Distrito 17 Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top:8px solid #2f3fa0;
+  border-bottom:8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:24px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+.hero{
+  max-width:1100px;
+  margin:20px auto;
+  background:#e6f0ff;
+  border:3px solid #5a5a5a;
+  border-radius:60px;
+  text-align:center;
+  padding:30px;
+}
+
+.hero h1{font-size:3rem;}
+.hero h2{margin-top:10px;font-weight:normal;}
+
+.docs-container{
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+/* Estilo para las Tarjetas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 15px;
+  border-top: 5px solid var(--azul);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  color: var(--azul);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card-btn {
+  display: inline-block;
+  background: #2f3fa0;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-btn:hover {
+  background: #16256b;
+}
+
+.pdf-viewer{
+  background:#fff;
+  border-radius:15px;
+  padding:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.pdf-viewer h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .footer-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:2rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="esto-es-aa.html">Esto es AA</a></li>
+  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
+  <li><a href="mapas.html">Mapas</a></li>
+  <li><a href="calendario.html">Calendario</a></li>
+  <li><a href="eventos.html">Eventos y Asambleas</a></li>
+  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+  <li><a href="documentos.html">Documentos del Distrito</a></li>
+  <li><a href="numeros-grupo.html">Números de grupo</a></li>
+  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+  <li><a href="revistas.html">Revistas</a></li>
+  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+  <li><a href="profesionales.html">Para Profesionales</a></li>
+  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<h1>Documentos del Distrito</h1>
+<h2>Procedimientos, actas y manuales del Distrito 17</h2>
+</section>
+
+<main class="docs-container">
+
+  <!-- Las Tarjetas de Categorías -->
+  <div class="cards-grid">
+    <div class="card">
+      <h3>Procedimientos</h3>
+      <p>Estructura y pautas operativas oficiales del Distrito 17.</p>
+      <a href="https://drive.google.com/file/d/1-8viBHYF1WHrPcpNla9RkrxgWukpVAbg/view?usp=sharing" target="_blank" class="card-btn">VER</a>
+    </div>
+
+    <div class="card">
+      <h3>Estructura Reunion de Trabajo</h3>
+      <p>Formato a seguir durante las reuniones de trabajo del Distrito 17</p>
+      <a href="https://drive.google.com/file/d/156V1C1BStFTVfi86fcllFdepCqk6qomR/view?usp=sharing" target="_blank" class="card-btn">VER</a>
+    </div>
+
+    <div class="card">
+      <h3>Actas de Reuniones</h3>
+      <p>Modelo a seguir para registrar las reuniones de trabajo del Distrito 17.</p>
+      <a href="https://drive.google.com/file/d/1YBtPpbqH2yy0NX48ItdRqAoSIV373dSS/view?usp=sharing" target="_blank" class="card-btn">VER</a>
+    </div>
+
+    <div class="card">
+      <h3>Inventario del Distrito</h3>
+      <p>Cuestionario y preguntas oficiales para la revisión y el crecimiento grupal.</p>
+      <a href="https://drive.google.com/file/d/1eNU_VDmikp9mF-5yTvXB5elGygDEGDIa/view?usp=sharing" target="_blank" class="card-btn">VER</a>
+    </div>
+
+    <div class="card">
+      <h3>Libro de Mociones</h3>
+      <p>Este documento contiene un registro completo de las mociones aprobadas y rechazadas en los procedimientos del Distrito 17 a partir de 2027.</p>
+      <a href="https://drive.google.com/file/d/1NIWvgItb2-4dXQiW7TObz9PzlxZMcZ2_/view?usp=sharing" target="_blank" class="card-btn">VER</a>
+    </div>
+</div>
+
+<!-- Vista Previa Principal -->
+<div class="pdf-viewer" style="margin-top: 40px;">
+  <h3 style="color: #1f5560; margin-bottom: 15px;">Documento Principal: Manual de Procedimientos</h3>
+  <iframe src="https://drive.google.com/file/d/1Hul1cGeubEEAjPqRlmwqsfWXpg3sojdr/preview" width="100%" height="650" style="border:none; border-radius:10px;"></iframe>
+</div>
+
+</main>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

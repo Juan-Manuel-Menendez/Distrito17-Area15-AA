@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventos y Asambleas | Distrito 17 Área 15 AA</title>
+<style>
+:root {
+  --azul: #1f5560;
+  --azul-oscuro: #16256b;
+  --dorado: #d5b05a;
+  --gris-fondo: #f8f9fa;
+  --gris-card: #ffffff;
+  --texto-principal: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--gris-fondo);
+  color: var(--texto-principal);
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  border-top: 8px solid #2f3fa0;
+  border-bottom: 8px solid #2f3fa0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 4px 8px 8px 8px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 8px 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--azul-oscuro);
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 30px auto 20px auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f4ff 100%);
+  border: 2px solid #d0dbe8;
+  border-radius: 24px;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #1a237e;
+  margin-bottom: 80px; /* <--- ESPACIO AMPLIADO A 80PX */
+}
+
+.hero h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #555;
+}
+
+.events-wrapper {
+  max-width: 1000px;
+  margin: 20px auto 40px auto;
+  padding: 25px;
+  background: var(--gris-card);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  border: 1px solid #eaeaea;
+}
+
+#google-events-container iframe {
+  border: 0;
+  width: 100%;
+  height: 620px;
+  border-radius: 12px;
+}
+
+footer {
+  background: #111;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer-grid h3 {
+  color: var(--dorado);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-grid p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .nav-container { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="esto-es-aa.html">Esto es AA</a></li>
+  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
+  <li><a href="mapas.html">Mapas</a></li>
+  <li><a href="calendario.html">Calendario</a></li>
+  <li><a href="eventos.html">Eventos y Asambleas</a></li>
+  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+  <li><a href="documentos.html">Documentos del Distrito</a></li>
+  <li><a href="numeros-grupo.html">Números de grupo</a></li>
+  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+  <li><a href="revistas.html">Revistas</a></li>
+  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+  <li><a href="profesionales.html">Para Profesionales</a></li>
+  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<h1>Eventos y Asambleas</h1>
+<h2>Próximas actividades actualizadas desde el calendario del distrito</h2>
+</section>
+
+<main class="events-wrapper">
+  <div id="google-events-container">
+    <iframe 
+      src="https://calendar.google.com/calendar/embed?src=distrito17area15aa%40gmail.com&ctz=America%2FNew_York&hl=es&mode=AGENDA" 
+      scrolling="no">
+    </iframe>
+  </div>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

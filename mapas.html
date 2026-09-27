@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapas | Distrito 17 - Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --dorado:#d5b05a;
+  --gris:#f4f4f4;
+  --negro:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+
+header{
+  background:#fff;
+  border-top: 8px solid #2f3fa0;
+  border-bottom: 8px solid #2f3fa0;
+}
+
+.nav-container{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:8px;
+}
+
+.logo{width:120px;height:auto;}
+
+nav ul{
+  display:flex;
+  flex-wrap:wrap;
+  list-style:none;
+  gap:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#222;
+  font-size:0.95rem;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#16256b;
+}
+
+/* Contenido Principal de Mapas */
+.maps-container{
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.maps-container h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #16256b;
+  margin-bottom: 10px;
+}
+
+.maps-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Cuadrícula compacta y ajustada */
+.maps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Tarjeta compacta ajustada exactamente a su contenido */
+.map-card {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  max-width: 380px;
+}
+
+.map-card h2 {
+  font-size: 0.9rem;
+  color: #2f3fa0;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.map-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain; 
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.img-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.zoom-hint {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Estilos de la ventana flotante (Modal) a pantalla completa total */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.modal-content {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 98vw;
+  max-height: 98vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 1010;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.close-modal:hover {
+  color: #d5b05a;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:40px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  max-width: 1400px;
+  margin: auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:25px;
+}
+
+@media(max-width:768px){
+  .nav-container{flex-direction:column;}
+  .maps-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .maps-container h1 {font-size: 1.8rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-container">
+<a href="index.html">
+  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+</a>
+<nav>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+  <li><a href="esto-es-aa.html">Esto es AA</a></li>
+  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
+  <li><a href="mapas.html">Mapas</a></li>
+  <li><a href="calendario.html">Calendario</a></li>
+  <li><a href="eventos.html">Eventos y Asambleas</a></li>
+  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
+  <li><a href="documentos.html">Documentos del Distrito</a></li>
+  <li><a href="numeros-grupo.html">Números de grupo</a></li>
+  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
+  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
+  <li><a href="revistas.html">Revistas</a></li>
+  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
+  <li><a href="profesionales.html">Para Profesionales</a></li>
+  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+</nav>
+</div>
+</header>
+
+<main class="maps-container">
+<h1>Mapas de Referencia</h1>
+<p class="maps-intro">Haz clic sobre cualquier mapa para verlo en tamaño completo.</p>
+
+<div class="maps-grid">
+
+  <!-- Mapa 1 -->
+  <div class="map-card">
+    <h2>Conferencia de Servicios Generales</h2>
+    <div class="img-wrapper" onclick="openModal('imagenes/mapausacanada.png')">
+      <img src="imagenes/mapausacanada.png" alt="Mapa Conferencia de Servicios Generales">
+    </div>
+    <span class="zoom-hint">🔍 Clic para ampliar</span>
+  </div>
+
+  <!-- Mapa 2 -->
+  <div class="map-card">
+    <h2>Distritos Área 15 - Florida Sur</h2>
+    <div class="img-wrapper" onclick="openModal('imagenes/MapaArea15.png')">
+      <img src="imagenes/MapaArea15.png" alt="Mapa Distritos Área 15 Florida Sur">
+    </div>
+    <span class="zoom-hint">🔍 Clic para ampliar</span>
+  </div>
+
+  <!-- Mapa 3 -->
+  <div class="map-card">
+    <h2>Distrito Lingüístico Hispano</h2>
+    <div class="img-wrapper" onclick="openModal('imagenes/linguistico.png')">
+      <img src="imagenes/linguistico.png" alt="Mapa Distrito Lingüístico Hispano">
+    </div>
+    <span class="zoom-hint">🔍 Clic para ampliar</span>
+  </div>
+
+  <!-- Mapa 4 -->
+  <div class="map-card">
+    <h2>Distrito 17</h2>
+    <div class="img-wrapper" onclick="openModal('imagenes/mapadistrito.png')">
+      <img src="imagenes/mapadistrito.png" alt="Mapa Distrito 17">
+    </div>
+    <span class="zoom-hint">🔍 Clic para ampliar</span>
+  </div>
+
+</div>
+</main>
+
+<!-- Ventana Modal para la Imagen Ampliada -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close-modal">&times;</span>
+  <div class="modal-content">
+    <img id="modalImg" src="" alt="Mapa ampliado">
+  </div>
+</div>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Distrito 17</h3>
+<p>Área 15 - Sur de Florida</p>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>Español: (305) 642-2805</p>
+<p>Inglés: (305) 461-2425</p>
+</div>
+<div>
+<h3>Dirección</h3>
+<p>1770 West Flagler St. #1</p>
+<p>Miami, FL 33135</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Funciones JavaScript para abrir la imagen ocultando las pestañas y barras del navegador
+function openModal(imageSrc) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  modal.style.display = "flex";
+  modalImg.src = imageSrc;
+
+  // Oculta las pestañas y la barra de direcciones de Chrome automáticamente
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen().catch(err => {});
+  }
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+  
+  // Sale del modo de pantalla completa al cerrar
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(err => {});
+  }
+}
+</script>
+
+</body>
+</html>
