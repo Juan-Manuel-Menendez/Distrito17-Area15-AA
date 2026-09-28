@@ -460,7 +460,7 @@ function cargarEventos() {
 
         const mesCorto = fechaObj.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '').toUpperCase();
         const diaNum = fechaObj.getDate();
-        const anioNum = fechaObj.getFullYear(); // Obtenemos el año
+        const anioNum = fechaObj.getFullYear(); // Año dinámico
 
         const esTodoElDia = !item.start.dateTime;
         let horarioTexto = esTodoElDia ? 'Todo el día' : fechaObj.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
