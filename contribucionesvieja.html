@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursos para RSG | Distrito 17 Área 15 AA</title>
+
+<style>
+:root{
+  --azul:#1f5560;
+  --azul-oscuro:#16256b;
+  --dorado:#d5b05a;
+  --gris-fondo:#f8f9fa;
+  --gris-card:#ffffff;
+  --texto-principal:#222222;
+  --primary-blue: #2b3b95;
+  --hover-blue: #1e2a6d;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:var(--gris-fondo);
+  color:var(--texto-principal);
+  line-height: 1.6;
+}
+
+/* ENCABEZADO IDÉNTICO A MUESTRA */
+header{
+  background:#fff;
+  border-top: 5px solid var(--primary-blue);
+  border-bottom: 5px solid var(--primary-blue);
+  padding: 12px 0;
+}
+
+.nav-container{
+  max-width: 1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo{
+  height: 100px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+}
+
+nav a.back-link{
+  text-decoration: none;
+  color: var(--primary-blue);
+  font-size: 1.05rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+nav a.back-link:hover{
+  color: var(--hover-blue);
+  text-decoration: underline;
+}
+
+/* BARRA DE BÚSQUEDA IDÉNTICA */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  outline: none;
+  width: 220px;
+  color: #555;
+}
+
+.search-box input::placeholder {
+  color: #888;
+}
+
+.search-box button {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.search-box button:hover {
+  background: var(--hover-blue);
+}
+
+.hero{
+  max-width:1100px;
+  margin:30px auto 20px auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f4ff 100%);
+  border: 2px solid #d0dbe8;
+  border-radius: 24px;
+  text-align:center;
+  padding: 30px 20px;
+}
+
+.hero h1{
+  font-size: 2.2rem;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.hero h2{
+  font-size: 1rem;
+  font-weight: normal;
+  color: #555;
+}
+
+.rsg-container {
+  max-width: 1200px;
+  margin: 30px auto 50px auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.col-left {
+  background: var(--gris-card);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-main-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #16256b;
+  border-bottom: 2px solid #d5b05a;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+/* Portada centrada e interactiva */
+.book-cover-wrapper {
+  text-align: center;
+  background: transparent;
+  padding: 0;
+  margin: 5px 0 5px 0;
+}
+
+.book-cover-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.book-cover-link:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.book-cover-img {
+  max-width: 75%;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Enlace explícito del manual debajo de la imagen */
+.book-text-link {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1a237e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.book-text-link:hover {
+  color: #2f3fa0;
+  text-decoration: underline;
+}
+
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-pill {
+  background: #111111;
+  color: white;
+  text-align: center;
+  padding: 22px 25px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, background 0.2s;
+  display: block;
+}
+
+.btn-pill:hover {
+  background: #2f3fa0;
+  transform: translateY(-2px);
+}
+
+/* Contenedor para los enlaces de la derecha */
+.links-box-right {
+  background: var(--gris-card);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:30px 20px;
+  margin-top:50px;
+}
+
+.footer-grid{
+  max-width: 1200px;
+  margin: auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:30px;
+}
+
+.footer-grid h3 {
+  color: var(--dorado);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-grid p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+@media(max-width:900px){
+  .rsg-container {grid-template-columns: 1fr;}
+  .nav-container{flex-direction:column; align-items:center; gap: 12px;}
+  .header-left {flex-direction: column; gap: 10px;}
+  .search-box {width: 100%; justify-content: center;}
+  .search-box input {width: 200px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="header-left">
+      <a href="index.html">
+        <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+      </a>
+
+      <!-- Navegación Simplificada -->
+      <nav>
+        <ul>
+          <li><a href="index.html" class="back-link">&larr; Volver al inicio</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar texto...">
+      <button onclick="buscarEnPagina()">Buscar</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Recursos para RSG</h1>
+  <h2>Herramientas y guías de servicio para Representantes de Servicios Generales</h2>
+</section>
+
+<main class="rsg-container">
+  
+  <!-- Columna Izquierda: Literatura y Manual de Servicio -->
+  <div class="col-left">
+    <div class="section-main-title">Literatura y Guías Oficiales</div>
+
+    <!-- Portada interactiva con enlace directo al PDF oficial del Manual en español -->
+    <div class="book-cover-wrapper">
+      <a href="https://www.aa.org/sites/default/files/literature/SP_2021_AA_service_manual.pdf" target="_blank" class="book-cover-link">
+        <img src="imagenes/portada-manual.jpg" class="book-cover-img" alt="Portada del Manual de Servicio de A.A.">
+      </a>
+    </div>
+    <div style="text-align: center;">
+      <a href="https://www.aa.org/sites/default/files/literature/SP_2021_AA_service_manual.pdf" target="_blank" class="book-text-link">
+        📖 Abrir PDF del Manual de Servicio de A.A. (Español)
+      </a>
+    </div>
+  </div>
+
+  <!-- Columna Derecha: Botones principales y enlaces -->
+  <div class="col-right">
+    <a href="https://www.aa.org/es/faq/que-es-un-padrino-de-servicio" class="btn-pill" target="_blank">¿QUÉ ES UN PATROCINADOR DE SERVICIO?</a>
+
+    <!-- Enlaces oficiales OSG -->
+    <div class="links-box-right">
+      <div class="section-main-title" style="margin-top: 0;">Material y Guías OSG</div>
+
+      <a href="https://aaws.widen.net/content/qxygtljb1a/pdf/sp-19_gsr_online.pdf?v=32cb6907-b80c-47e9-8af2-88df00f38b90"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0057b7; color:white; text-decoration:none; border-radius:6px;">
+         Representante de Servicios Generales (RSG)
+      </a>
+
+      <a href="https://aaws.widen.net/content/mquntdlro4/pdf/gsr_kit_digital_sp_online.pdf?v=b94edf7f-091e-49ae-928f-d3fd4e288ce8"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0066cc; color:white; text-decoration:none; border-radius:6px;">
+        Paquete de Representante de Servicios Generales (R.S.G.)
+      </a>
+
+      <a href="https://aaws.widen.net/content/pz4jhh8ca9/pdf/sf-12_dcm_flyer_online.pdf?v=d91531b3-a891-4a24-9550-347956fc8d97"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0066cc; color:white; text-decoration:none; border-radius:6px;">
+        Miembro de Comité de Distrito (MCD)
+      </a>
+
+      <a href="https://aaws.widen.net/content/oomjcedmwt/pdf/smfs-174_sharing_from_dcms_to_a_new_dcm.pdf?v=9f7e9d56-6225-4f08-80b7-7335a0dbab28"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0066cc; color:white; text-decoration:none; border-radius:6px;">
+        Compartimiento de M.C.D. a un Nuevo M.C.D. (Material OSG)
+      </a>
+
+      <a href="https://area59aa.org/wp-content/uploads/2024/04/folletos_es.pdf"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#9900cc; color:white; text-decoration:none; border-radius:6px;">
+        Folletos Varios. (Material OSG)
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>Distrito 17</h3>
+      <p>Área 15 - Sur de Florida</p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>Español: (305) 642-2805</p>
+      <p>Inglés: (305) 461-2425</p>
+    </div>
+    <div>
+      <h3>Dirección</h3>
+      <p>1770 West Flagler St. #1</p>
+      <p>Miami, FL 33135</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function buscarEnPagina() {
+  const texto = document.getElementById("searchInput").value;
+  if (texto) {
+    window.find(texto);
+  }
+}
+</script>
+
+</body>
+</html>
