@@ -138,7 +138,68 @@ header {
   border: 1px solid #eaeaea;
 }
 
-/* Estilo de fila de evento inspirado en la referencia */
+/* Estilos para la barra de filtros de fechas */
+.filter-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f0f4ff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid #d0dbe8;
+}
+
+.filter-bar label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--azul);
+}
+
+.filter-bar input[type="date"] {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.filter-bar input[type="date"]:focus {
+  border-color: var(--azul);
+}
+
+.btn-filtrar {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-filtrar:hover {
+  background-color: var(--azul-oscuro);
+}
+
+.btn-limpiar {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-limpiar:hover {
+  background-color: #444;
+}
+
+/* Estilo de fila de evento */
 .event-row {
   display: flex;
   align-items: flex-start;
@@ -150,13 +211,13 @@ header {
   border-bottom: none;
 }
 
-/* Cajita de fecha tipo bloque */
+/* Cajita de fecha tipo bloque con año */
 .event-date-box {
   background: #eef2f7;
   border: 1px solid #d8e2ec;
   border-radius: 4px;
   text-align: center;
-  min-width: 75px;
+  min-width: 80px;
   padding: 8px 4px;
   margin-right: 24px;
   flex-shrink: 0;
@@ -173,19 +234,21 @@ header {
 
 .date-box-day {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #111;
   line-height: 1.1;
   margin: 2px 0;
 }
 
-.date-box-sub {
+.date-box-year {
   display: block;
-  font-size: 0.55rem;
-  color: #666;
-  text-transform: uppercase;
-  line-height: 1.2;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #444;
+  border-top: 1px solid #d8e2ec;
+  padding-top: 2px;
+  margin-top: 2px;
 }
 
 /* Contenido del evento */
@@ -276,6 +339,7 @@ footer {
   .hero h1 { font-size: 1.5rem; }
   .event-row { flex-direction: column; gap: 15px; }
   .event-date-box { align-self: flex-start; }
+  .filter-bar { flex-direction: column; align-items: stretch; }
 }
 </style>
 </head>
@@ -303,6 +367,20 @@ footer {
 </section>
 
 <main class="events-wrapper">
+  <!-- Barra de Filtros Interactivos por Fecha -->
+  <div class="filter-bar">
+    <div>
+      <label for="fechaDesde">Desde: </label>
+      <input type="date" id="fechaDesde">
+    </div>
+    <div>
+      <label for="fechaHasta">Hasta: </label>
+      <input type="date" id="fechaHasta">
+    </div>
+    <button class="btn-filtrar" onclick="cargarEventos()">Filtrar Fechas</button>
+    <button class="btn-limpiar" onclick="limpiarFiltros()">Ver Próximos</button>
+  </div>
+
   <div id="custom-calendar-container">
     <p style="text-align: center; color: #555; padding: 20px;">Cargando eventos del distrito...</p>
   </div>
@@ -335,73 +413,94 @@ function buscarEnPagina() {
   }
 }
 
-// CONEXIÓN CON LA API Y RENDERIZADO IDÉNTICO A LA REFERENCIA
 const API_KEY = 'AIzaSyDLrHDgmIGFsEo3tKdRT0TF3qasXdvobWE'; 
 const CALENDAR_ID = 'distrito17area15aa@gmail.com';
-const now = new Date().toISOString();
-const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${now}`;
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('custom-calendar-container');
-    container.innerHTML = '';
+window.onload = function() {
+  document.getElementById('fechaDesde').valueAsDate = new Date();
+  cargarEventos();
+};
 
-    if (!data.items || data.items.length === 0) {
-      container.innerHTML = '<p style="text-align: center; color: #555; padding: 20px;">No hay eventos próximos programados.</p>';
-      return;
-    }
+function cargarEventos() {
+  const container = document.getElementById('custom-calendar-container');
+  container.innerHTML = '<p style="text-align: center; color: #555; padding: 20px;">Cargando eventos...</p>';
 
-    let htmlFinal = '';
+  let url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime&maxResults=100`;
 
-    data.items.forEach(item => {
-      const fechaInicioStr = item.start.dateTime || item.start.date;
-      const fechaObj = new Date(fechaInicioStr);
+  const valDesde = document.getElementById('fechaDesde').value;
+  const valHasta = document.getElementById('fechaHasta').value;
 
-      // Mes en formato corto (ej: OCT, NOV)
-      const mesCorto = fechaObj.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '').toUpperCase();
-      const diaNum = fechaObj.getDate();
+  if (valDesde) {
+    url += `&timeMin=${new Date(valDesde).toISOString()}`;
+  } else {
+    url += `&timeMin=${new Date().toISOString()}`;
+  }
 
-      // Hora o indicativo de todo el día
-      const esTodoElDia = !item.start.dateTime;
-      let horarioTexto = esTodoElDia ? 'Todo el día' : fechaObj.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+  if (valHasta) {
+    let fechaHastaObj = new Date(valHasta);
+    fechaHastaObj.setDate(fechaHastaObj.getDate() + 1);
+    url += `&timeMax=${fechaHastaObj.toISOString()}`;
+  }
 
-      // Si tiene fecha de fin y es distinta, podemos mostrar un aviso opcional
-      let subTextoFecha = '';
-      if (item.end) {
-        const fechaFinObj = new Date(item.end.dateTime || item.end.date);
-        // Si dura más de un día o similar se puede reflejar, por defecto mostramos la hora o ubicación
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      container.innerHTML = '';
+
+      if (!data.items || data.items.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: #555; padding: 20px;">No se encontraron eventos en este rango de fechas.</p>';
+        return;
       }
 
-      const titulo = item.summary || 'Sin título';
-      const enlaceGoogle = item.htmlLink || '#';
-      const ubicacion = item.location ? `📍 ${item.location}` : '';
+      let htmlFinal = '';
 
-      htmlFinal += `
-        <div class="event-row">
-          <div class="event-date-box">
-            <span class="date-box-month">${mesCorto}</span>
-            <span class="date-box-day">${diaNum}</span>
-            <span class="date-box-sub">EVENTO</span>
-          </div>
-          <div class="event-details">
-            <h3 class="event-title">${titulo}</h3>
-            <div class="event-meta">${horarioTexto} ${ubicacion ? '· ' + ubicacion : ''}</div>
-            <div class="event-links">
-              <a href="${enlaceGoogle}" target="_blank">Calendario de Google</a> · <a href="${enlaceGoogle}" target="_blank">ICS</a>
+      data.items.forEach(item => {
+        const fechaInicioStr = item.start.dateTime || item.start.date;
+        const fechaObj = new Date(fechaInicioStr);
+
+        const mesCorto = fechaObj.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '').toUpperCase();
+        const diaNum = fechaObj.getDate();
+        const anioNum = fechaObj.getFullYear(); // Obtenemos el año
+
+        const esTodoElDia = !item.start.dateTime;
+        let horarioTexto = esTodoElDia ? 'Todo el día' : fechaObj.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+
+        const titulo = item.summary || 'Sin título';
+        const enlaceGoogle = item.htmlLink || '#';
+        const ubicacion = item.location ? `📍 ${item.location}` : '';
+
+        htmlFinal += `
+          <div class="event-row">
+            <div class="event-date-box">
+              <span class="date-box-month">${mesCorto}</span>
+              <span class="date-box-day">${diaNum}</span>
+              <span class="date-box-year">${anioNum}</span>
             </div>
-            <a href="${enlaceGoogle}" target="_blank" class="btn-ver-evento">VER EVENTO &rarr;</a>
+            <div class="event-details">
+              <h3 class="event-title">${titulo}</h3>
+              <div class="event-meta">${horarioTexto} ${ubicacion ? '· ' + ubicacion : ''}</div>
+              <div class="event-links">
+                <a href="${enlaceGoogle}" target="_blank">Calendario de Google</a> · <a href="${enlaceGoogle}" target="_blank">ICS</a>
+              </div>
+              <a href="${enlaceGoogle}" target="_blank" class="btn-ver-evento">VER EVENTO &rarr;</a>
+            </div>
           </div>
-        </div>
-      `;
-    });
+        `;
+      });
 
-    container.innerHTML = htmlFinal;
-  })
-  .catch(error => {
-    console.error('Error al cargar los eventos:', error);
-    container.innerHTML = '<p style="text-align: center; color: red; padding: 20px;">Error al conectar con Google Calendar. Verifica tu clave de API.</p>';
-  });
+      container.innerHTML = htmlFinal;
+    })
+    .catch(error => {
+      console.error('Error al cargar los eventos:', error);
+      container.innerHTML = '<p style="text-align: center; color: red; padding: 20px;">Error al conectar con Google Calendar. Verifica tu clave de API.</p>';
+    });
+}
+
+function limpiarFiltros() {
+  document.getElementById('fechaDesde').value = '';
+  document.getElementById('fechaHasta').value = '';
+  cargarEventos();
+}
 </script>
 
 </body>
