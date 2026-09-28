@@ -1,811 +1,406 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contribuciones a la Séptima Tradición | Distrito 17 - Área 15 AA</title>
+<title>Recursos para RSG | Distrito 17 Área 15 AA</title>
 
 <style>
 :root{
   --azul:#1f5560;
+  --azul-oscuro:#16256b;
   --dorado:#d5b05a;
-  --gris:#f4f4f4;
-  --negro:#111;
+  --gris-fondo:#f8f9fa;
+  --gris-card:#ffffff;
+  --texto-principal:#222222;
+  --primary-blue: #2b3b95;
+  --hover-blue: #1e2a6d;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
 
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:var(--gris-fondo);
+  color:var(--texto-principal);
+  line-height: 1.6;
+}
+
+/* ENCABEZADO IDÉNTICO A MUESTRA */
 header{
   background:#fff;
-  border-top: 8px solid #2f3fa0;
-  border-bottom: 8px solid #2f3fa0;
+  border-top: 5px solid var(--primary-blue);
+  border-bottom: 5px solid var(--primary-blue);
+  padding: 12px 0;
 }
 
 .nav-container{
-  max-width:1400px;
+  max-width: 1400px;
   margin:auto;
   display:flex;
   align-items:center;
-  gap:30px;
-  padding:8px;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px;
 }
 
-.logo{width:120px;height:auto;}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo{
+  height: 100px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
 
 nav ul{
   display:flex;
-  flex-wrap:wrap;
   list-style:none;
-  gap:20px;
 }
 
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
+nav a.back-link{
+  text-decoration: none;
+  color: var(--primary-blue);
+  font-size: 1.05rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
 }
 
-nav a:hover{
-  color:#16256b;
+nav a.back-link:hover{
+  color: var(--hover-blue);
+  text-decoration: underline;
 }
 
-/* Contenido Principal en Dos Columnas */
-.content-container{
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.page-title {
-  font-size: 2.3rem;
-  color: #16256b;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.columns-wrapper {
+/* BARRA DE BÚSQUEDA IDÉNTICA */
+.search-box {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-/* Columna Izquierda: Texto de la Tradición */
-.left-column {
-  flex: 1;
-  background: #fff;
+.search-box input {
+  padding: 8px 16px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 35px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  border-radius: 20px;
+  font-size: 0.95rem;
+  outline: none;
+  width: 220px;
+  color: #555;
 }
 
-.tradition-intro p {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: left;
+.search-box input::placeholder {
+  color: #888;
 }
 
-.tradition-quote {
-  font-style: italic;
-  color: #2c3e50;
-  border-left: 4px solid #1f5560;
-  padding-left: 20px;
-  margin-bottom: 20px;
+.search-box button {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
 }
 
-/* Columna Derecha: Bloques de Pago (Área y OSG) */
-.right-column {
-  flex: 1;
+.search-box button:hover {
+  background: var(--hover-blue);
+}
+
+.hero{
+  max-width:1100px;
+  margin:30px auto 20px auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f4ff 100%);
+  border: 2px solid #d0dbe8;
+  border-radius: 24px;
+  text-align:center;
+  padding: 30px 20px;
+}
+
+.hero h1{
+  font-size: 2.2rem;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.hero h2{
+  font-size: 1rem;
+  font-weight: normal;
+  color: #555;
+}
+
+.rsg-container {
+  max-width: 1200px;
+  margin: 30px auto 50px auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.col-left {
+  background: var(--gris-card);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid #eaeaea;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.contribution-section {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  text-align: left;
-}
-
-.contribution-section h2 {
+.section-main-title {
+  font-size: 1.15rem;
+  font-weight: bold;
   color: #16256b;
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 2px solid #d5b05a;
   padding-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  margin-bottom: 5px;
 }
 
-/* Estilo para los logos a la izquierda del título */
-.title-logo {
-  height: 30px;
-  width: auto;
-  object-fit: contain;
+/* Portada centrada e interactiva */
+.book-cover-wrapper {
+  text-align: center;
+  background: transparent;
+  padding: 0;
+  margin: 5px 0 5px 0;
 }
 
-.contribution-section p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 12px;
-  text-align: left;
-}
-
-/* Sub-bloques internos para dividir la tarjeta OSG */
-.osg-sub-block {
-  background-color: #f7f9fa;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 12px;
-}
-
-.osg-sub-block:last-of-type {
-  margin-bottom: 0; /* Sin margen inferior si es el último sub-bloque */
-}
-
-.osg-sub-title {
-  font-size: 0.98rem;
-  font-weight: bold;
-  color: #16256b;
-  margin-bottom: 6px;
-}
-
-/* Estilo para las instrucciones de contribución */
-.contribution-instructions {
-  font-size: 0.88rem;
-  color: #333;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 10px 12px;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-.contribution-instructions p {
-  margin-bottom: 6px;
-  font-size: 0.88rem;
-}
-
-.contribution-instructions ul {
-  margin-top: 4px;
-  padding-left: 18px;
-}
-
-.contribution-instructions li {
-  margin-bottom: 4px;
-}
-
-.info-box {
-  background-color: #f8f9fa;
-  border-left: 4px solid #2f3fa0;
-  border-top: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 8px 12px;
-  text-align: left;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.4;
-  margin-top: 10px;
-}
-
-.zelle-highlight {
-  font-weight: bold;
-  color: #1f5560;
-  background: #eef4f5;
-  padding: 3px 6px;
-  border-radius: 4px;
+.book-cover-link {
   display: inline-block;
-  margin-top: 4px;
-  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* Botones */
-.btn-container {
+.book-cover-link:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.book-cover-img {
+  max-width: 75%;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Enlace explícito del manual debajo de la imagen */
+.book-text-link {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1a237e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.book-text-link:hover {
+  color: #2f3fa0;
+  text-decoration: underline;
+}
+
+.col-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 20px;
 }
 
-.osg-btn {
-  display: block;
-  background-color: #111;
-  color: #fff;
-  text-decoration: none;
+.btn-pill {
+  background: #111111;
+  color: white;
   text-align: center;
-  padding: 10px 18px;
-  border-radius: 30px;
+  padding: 22px 25px;
+  border-radius: 40px;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 0.88rem;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, background 0.2s;
+  display: block;
 }
 
-.osg-btn.secondary {
-  background-color: #2f3fa0;
-}
-
-.osg-btn:hover {
-  background-color: #16256b;
+.btn-pill:hover {
+  background: #2f3fa0;
   transform: translateY(-2px);
+}
+
+/* Contenedor para los enlaces de la derecha */
+.links-box-right {
+  background: var(--gris-card);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 footer{
   background:#111;
   color:white;
-  padding:40px;
-  margin-top:60px;
+  padding:30px 20px;
+  margin-top:50px;
 }
 
 .footer-grid{
-  max-width: 1400px;
+  max-width: 1200px;
   margin: auto;
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  gap:25px;
+  gap:30px;
+}
+
+.footer-grid h3 {
+  color: var(--dorado);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-grid p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 6px;
 }
 
 @media(max-width:900px){
-  .columns-wrapper{flex-direction:column;}
-  .nav-container{flex-direction:column;}
-  .footer-grid{grid-template-columns:1fr;}
-  .page-title {font-size: 1.8rem;}
+  .rsg-container {grid-template-columns: 1fr;}
+  .nav-container{flex-direction:column; align-items:center; gap: 12px;}
+  .header-left {flex-direction: column; gap: 10px;}
+  .search-box {width: 100%; justify-content: center;}
+  .search-box input {width: 200px;}
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="nav-container">
-<a href="index.html">
-  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-  <li><a href="esto-es-aa.html">Esto es AA</a></li>
-  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
-  <li><a href="mapas.html">Mapas</a></li>
-  <li><a href="calendario.html">Calendario</a></li>
-  <li><a href="eventos.html">Eventos y Asambleas</a></li>
-  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-  <li><a href="documentos.html">Documentos del Distrito</a></li>
-  <li><a href="numeros-grupo.html">Números de grupo</a></li>
-  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-  <li><a href="revistas.html">Revistas</a></li>
-  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-  <li><a href="profesionales.html">Para Profesionales</a></li>
-  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
-</ul>
-</nav>
-</div>
-</header>
+  <div class="nav-container">
+    <div class="header-left">
+      <a href="index.html">
+        <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+      </a>
 
-<main class="content-container">
-  <h1 class="page-title">Contribuciones a la Séptima Tradición</h1>
-
-  <div class="columns-wrapper">
-    
-    <!-- COLUMNA IZQUIERDA: TEXTO DE LA TRADICIÓN -->
-    <div class="left-column">
-      <div class="tradition-intro">
-        <div class="tradition-quote">
-          <p>
-            "Los propios grupos de A.A. deberían contar plenamente con las contribuciones voluntarias de sus propios miembros. Creemos que cada grupo debería alcanzar pronto este ideal; que cualquier solicitud pública de fondos bajo el nombre de Alcohólicos Anónimos es altamente peligrosa, ya sea por grupos, clubes, hospitales u otras agencias externas; Que aceptar grandes donaciones de cualquier fuente, o de contribuciones que conlleven alguna obligación, es imprudente. Además, vemos con gran preocupación aquellos bonos del Tesoro de los A.A. que continúan, más allá de reservas prudentes, acumulando fondos sin ningún propósito declarado de los A.A. La experiencia a menudo nos ha advertido de que nada puede destruir tan seguramente nuestra herencia espiritual como disputas inútiles sobre propiedad, dinero y autoridad." — <em>Tradición Siete, formato largo</em>
-          </p>
-        </div>
-        <p>
-          Esto significa que solo los miembros de A.A. contribuyen económicamente a A.A., e incluso los miembros de A.A. tienen un límite en la cantidad que pueden aportar. Esto mantiene a A.A. libre de influencias externas que podrían desviarnos de nuestro propósito principal, que es ayudar al alcohólico que aún sufre. La cantidad de la contribución es secundaria a la conexión espiritual que une a todos los grupos en el mundo.
-        </p>
-      </div>
+      <!-- Navegación Simplificada -->
+      <nav>
+        <ul>
+          <li><a href="index.html" class="back-link">&larr; Volver al inicio</a></li>
+        </ul>
+      </nav>
     </div>
 
-    <!-- COLUMNA DERECHA: BLOQUES DE CONTRIBUCIÓN (ÁREA Y OSG) -->
-    <div class="right-column">
-      
-      <!-- Bloque 1: Contribuciones al Área 15 -->
-      <div class="contribution-section">
-        <h2>
-          <img src="imagenes/area15.png" alt="Área 15 AA" class="title-logo">
-          <span>Contribuciones al Área 15</span>
-        </h2>
-        <p>
-          Los grupos y miembros del Distrito 17 que deseen enviar sus aportaciones correspondientes al Área 15 pueden realizarlas de forma rápida y directa mediante Zelle.
-        </p>
-        <div class="info-box" style="text-align: center;">
-          <strong>Zelle oficial del Área 15:</strong><br>
-          <span class="zelle-highlight">treasurer@area15aa.org</span>
-        </div>
-      </div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar texto...">
+      <button onclick="buscarEnPagina()">Buscar</button>
+    </div>
+  </div>
+</header>
 
-      <!-- Bloque 2: Contribuciones a la OSG -->
-      <div class="contribution-section">
-        <h2>
-          <img src="imagenes/osg.png" alt="OSG" class="title-logo">
-          <span>Contribuciones a la OSG</span>
-        </h2>
-        
-        <!-- Sub-bloque A: Crear Cuenta -->
-        <div class="osg-sub-block">
-          <div class="osg-sub-title">1. Primera vez (Registro)</div>
-          <p style="margin-bottom: 8px; font-size: 0.9rem;">
-            Para realizar pagos online en la OSG, debe registrarse con un email (solo la primera vez).
-          </p>
-          <div class="btn-container" style="margin-top: 0;">
-            <a href="https://contribution.aa.org/app/checkout.ssp?is=register&login=T&reset=T&newcust=T&fragment=login-register#login-register" target="_blank" rel="noopener noreferrer" class="osg-btn secondary">
-              CREAR CUENTA / REGISTRARSE
-            </a>
-          </div>
-        </div>
+<section class="hero">
+  <h1>Recursos para RSG</h1>
+  <h2>Herramientas y guías de servicio para Representantes de Servicios Generales</h2>
+</section>
 
-        <!-- Sub-bloque B: Contribuir -->
-        <div class="osg-sub-block">
-          <div class="osg-sub-title">2. Grupos ya registrados</div>
-          <p style="margin-bottom: 8px; font-size: 0.9rem;">
-            Si ya dispone de su cuenta o grupo registrado, acceda directamente a realizar su aportación.
-          </p>
-          <div class="btn-container" style="margin-top: 0;">
-            <a href="https://contribution.aa.org/app/checkout.ssp?is=checkout#login-register" target="_blank" rel="noopener noreferrer" class="osg-btn">
-              CONTRIBUIR
-            </a>
-          </div>
+<main class="rsg-container">
+  
+  <!-- Columna Izquierda: Literatura y Manual de Servicio -->
+  <div class="col-left">
+    <div class="section-main-title">Literatura y Guías Oficiales</div>
 
-          <!-- Texto de instrucciones -->
-          <div class="contribution-instructions">
-            <p>Si selecciona tipo de contribución de grupo puede buscarlo:</p>
-            <ul>
-              <li><strong>Nombre:</strong> Sale una lista de los grupos con ese nombre, puede distinguirlo por la ciudad.</li>
-              <li><strong>Por Id:</strong> Poner el código de su grupo.</li>
-            </ul>
-            <p style="margin-top: 6px; margin-bottom: 0;">Puede utilizar <strong>Recurrencia</strong> para que se repita ese pago automáticamente.</p>
-          </div>
-        </div>
+    <!-- Portada interactiva con enlace directo al PDF oficial del Manual en español -->
+    <div class="book-cover-wrapper">
+      <a href="https://www.aa.org/sites/default/files/literature/SP_2021_AA_service_manual.pdf" target="_blank" class="book-cover-link">
+        <img src="imagenes/portada-manual.jpg" class="book-cover-img" alt="Portada del Manual de Servicio de A.A.">
+      </a>
+    </div>
+    <div style="text-align: center;">
+      <a href="https://www.aa.org/sites/default/files/literature/SP_2021_AA_service_manual.pdf" target="_blank" class="book-text-link">
+        📖 Abrir PDF del Manual de Servicio de A.A. (Español)
+      </a>
+    </div>
+  </div>
 
-      </div>
+  <!-- Columna Derecha: Botones principales y enlaces -->
+  <div class="col-right">
+    <a href="https://www.aa.org/es/faq/que-es-un-padrino-de-servicio" class="btn-pill" target="_blank">¿QUÉ ES UN PATROCINADOR DE SERVICIO?</a>
 
+    <!-- Enlaces oficiales OSG -->
+    <div class="links-box-right">
+      <div class="section-main-title" style="margin-top: 0;">Material y Guías OSG</div>
+
+      <a href="https://aaws.widen.net/content/qxygtljb1a/pdf/sp-19_gsr_online.pdf?v=32cb6907-b80c-47e9-8af2-88df00f38b90"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0057b7; color:white; text-decoration:none; border-radius:6px;">
+         Representante de Servicios Generales (RSG)
+      </a>
+
+      <a href="https://aaws.widen.net/content/mquntdlro4/pdf/gsr_kit_digital_sp_online.pdf?v=b94edf7f-091e-49ae-928f-d3fd4e288ce8"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0066cc; color:white; text-decoration:none; border-radius:6px;">
+        Paquete de Representante de Servicios Generales (R.S.G.)
+      </a>
+
+      <a href="https://aaws.widen.net/content/pz4jhh8ca9/pdf/sf-12_dcm_flyer_online.pdf?v=d91531b3-a891-4a24-9550-347956fc8d97"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0066cc; color:white; text-decoration:none; border-radius:6px;">
+        Miembro de Comité de Distrito (MCD)
+      </a>
+
+      <a href="https://aaws.widen.net/content/oomjcedmwt/pdf/smfs-174_sharing_from_dcms_to_a_new_dcm.pdf?v=9f7e9d56-6225-4f08-80b7-7335a0dbab28"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#0066cc; color:white; text-decoration:none; border-radius:6px;">
+        Compartimiento de M.C.D. a un Nuevo M.C.D. (Material OSG)
+      </a>
+
+      <a href="https://area59aa.org/wp-content/uploads/2024/04/folletos_es.pdf"
+         target="_blank"
+         style="display:inline-block; padding:10px 15px; background:#9900cc; color:white; text-decoration:none; border-radius:6px;">
+        Folletos Varios. (Material OSG)
+      </a>
     </div>
 
   </div>
+
 </main>
 
 <footer>
-<div class="footer-grid">
-<div>
-<h3>Distrito 17</h3>
-<p>Área 15 - Sur de Florida</p>
-</div>
-<div>
-<h3>Contacto</h3>
-<p>Español: (305) 642-2805</p>
-<p>Inglés: (305) 461-2425</p>
-</div>
-<div>
-<h3>Dirección</h3>
-<p>1770 West Flagler St. #1</p>
-<p>Miami, FL 33135</p>
-</div>
-</div>
-</footer>
-
-</body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contribuciones a la Séptima Tradición | Distrito 17 - Área 15 AA</title>
-
-<style>
-:root{
-  --azul:#1f5560;
-  --dorado:#d5b05a;
-  --gris:#f4f4f4;
-  --negro:#111;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
-
-header{
-  background:#fff;
-  border-top: 8px solid #2f3fa0;
-  border-bottom: 8px solid #2f3fa0;
-}
-
-.nav-container{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding:8px;
-}
-
-.logo{width:120px;height:auto;}
-
-nav ul{
-  display:flex;
-  flex-wrap:wrap;
-  list-style:none;
-  gap:20px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#16256b;
-}
-
-/* Contenido Principal en Dos Columnas */
-.content-container{
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.page-title {
-  font-size: 2.3rem;
-  color: #16256b;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.columns-wrapper {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-}
-
-/* Columna Izquierda: Texto de la Tradición */
-.left-column {
-  flex: 1;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 35px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-}
-
-.tradition-intro p {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.tradition-quote {
-  font-style: italic;
-  color: #2c3e50;
-  border-left: 4px solid #1f5560;
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-/* Columna Derecha: Bloques de Pago (Área y OSG) */
-.right-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contribution-section {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  text-align: left;
-}
-
-.contribution-section h2 {
-  color: #16256b;
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  border-bottom: 2px solid #e5e5e5;
-  padding-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Estilo para los logos a la izquierda del título */
-.title-logo {
-  height: 30px;
-  width: auto;
-  object-fit: contain;
-}
-
-.contribution-section p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 12px;
-  text-align: left;
-}
-
-/* Sub-bloques internos para dividir la tarjeta OSG */
-.osg-sub-block {
-  background-color: #f7f9fa;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 12px;
-}
-
-.osg-sub-block:last-of-type {
-  margin-bottom: 0; /* Sin margen inferior si es el último sub-bloque */
-}
-
-.osg-sub-title {
-  font-size: 0.98rem;
-  font-weight: bold;
-  color: #16256b;
-  margin-bottom: 6px;
-}
-
-/* Estilo para las instrucciones de contribución */
-.contribution-instructions {
-  font-size: 0.88rem;
-  color: #333;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 10px 12px;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
-.contribution-instructions p {
-  margin-bottom: 6px;
-  font-size: 0.88rem;
-}
-
-.contribution-instructions ul {
-  margin-top: 4px;
-  padding-left: 18px;
-}
-
-.contribution-instructions li {
-  margin-bottom: 4px;
-}
-
-.info-box {
-  background-color: #f8f9fa;
-  border-left: 4px solid #2f3fa0;
-  border-top: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 8px 12px;
-  text-align: left;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.4;
-  margin-top: 10px;
-}
-
-.zelle-highlight {
-  font-weight: bold;
-  color: #1f5560;
-  background: #eef4f5;
-  padding: 3px 6px;
-  border-radius: 4px;
-  display: inline-block;
-  margin-top: 4px;
-  font-size: 0.95rem;
-}
-
-/* Botones */
-.btn-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.osg-btn {
-  display: block;
-  background-color: #111;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px 18px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 0.88rem;
-  letter-spacing: 0.5px;
-  transition: 0.3s;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-}
-
-.osg-btn.secondary {
-  background-color: #2f3fa0;
-}
-
-.osg-btn:hover {
-  background-color: #16256b;
-  transform: translateY(-2px);
-}
-
-footer{
-  background:#111;
-  color:white;
-  padding:40px;
-  margin-top:60px;
-}
-
-.footer-grid{
-  max-width: 1400px;
-  margin: auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:25px;
-}
-
-@media(max-width:900px){
-  .columns-wrapper{flex-direction:column;}
-  .nav-container{flex-direction:column;}
-  .footer-grid{grid-template-columns:1fr;}
-  .page-title {font-size: 1.8rem;}
-}
-</style>
-</head>
-<body>
-
-<header>
-<div class="nav-container">
-<a href="index.html">
-  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="esto-es-aa.html">Esto es AA</a></li>
-<li><a href="calendario.html">Calendario</a></li>
-<li><a href="eventos.html">Eventos y Asambleas</a></li>
-<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-<li><a href="revistas.html">Revistas</a></li>
-<li><a href="documentos.html">Documentos del Distrito</a></li>
-<li><a href="profesionales.html">Para Profesionales</a></li>
-<li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-<li><a href="numeros-grupo.html">Números de grupo</a></li>
-<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-<li><a href="mapas.html">Mapas</a></li>
-<li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
-</ul>
-</nav>
-</div>
-</header>
-
-<main class="content-container">
-  <h1 class="page-title">Contribuciones a la Séptima Tradición</h1>
-
-  <div class="columns-wrapper">
-    
-    <!-- COLUMNA IZQUIERDA: TEXTO DE LA TRADICIÓN -->
-    <div class="left-column">
-      <div class="tradition-intro">
-        <div class="tradition-quote">
-          <p>
-            "Los propios grupos de A.A. deberían contar plenamente con las contribuciones voluntarias de sus propios miembros. Creemos que cada grupo debería alcanzar pronto este ideal; que cualquier solicitud pública de fondos bajo el nombre de Alcohólicos Anónimos es altamente peligrosa, ya sea por grupos, clubes, hospitales u otras agencias externas; Que aceptar grandes donaciones de cualquier fuente, o de contribuciones que conlleven alguna obligación, es imprudente. Además, vemos con gran preocupación aquellos bonos del Tesoro de los A.A. que continúan, más allá de reservas prudentes, acumulando fondos sin ningún propósito declarado de los A.A. La experiencia a menudo nos ha advertido de que nada puede destruir tan seguramente nuestra herencia espiritual como disputas inútiles sobre propiedad, dinero y autoridad." — <em>Tradición Siete, formato largo</em>
-          </p>
-        </div>
-        <p>
-          Esto significa que solo los miembros de A.A. contribuyen económicamente a A.A., e incluso los miembros de A.A. tienen un límite en la cantidad que pueden aportar. Esto mantiene a A.A. libre de influencias externas que podrían desviarnos de nuestro propósito principal, que es ayudar al alcohólico que aún sufre. La cantidad de la contribución es secundaria a la conexión espiritual que une a todos los grupos en el mundo.
-        </p>
-      </div>
+  <div class="footer-grid">
+    <div>
+      <h3>Distrito 17</h3>
+      <p>Área 15 - Sur de Florida</p>
     </div>
-
-    <!-- COLUMNA DERECHA: BLOQUES DE CONTRIBUCIÓN (ÁREA Y OSG) -->
-    <div class="right-column">
-      
-      <!-- Bloque 1: Contribuciones al Área 15 -->
-      <div class="contribution-section">
-        <h2>
-          <img src="imagenes/area15.png" alt="Área 15 AA" class="title-logo">
-          <span>Contribuciones al Área 15</span>
-        </h2>
-        <p>
-          Los grupos y miembros del Distrito 17 que deseen enviar sus aportaciones correspondientes al Área 15 pueden realizarlas de forma rápida y directa mediante Zelle.
-        </p>
-        <div class="info-box" style="text-align: center;">
-          <strong>Zelle oficial del Área 15:</strong><br>
-          <span class="zelle-highlight">treasurer@area15aa.org</span>
-        </div>
-      </div>
-
-      <!-- Bloque 2: Contribuciones a la OSG -->
-      <div class="contribution-section">
-        <h2>
-          <img src="imagenes/osg.png" alt="OSG" class="title-logo">
-          <span>Contribuciones a la OSG</span>
-        </h2>
-        
-        <!-- Sub-bloque A: Crear Cuenta -->
-        <div class="osg-sub-block">
-          <div class="osg-sub-title">1. Primera vez (Registro)</div>
-          <p style="margin-bottom: 8px; font-size: 0.9rem;">
-            Para realizar pagos online en la OSG, debe registrarse con un email (solo la primera vez).
-          </p>
-          <div class="btn-container" style="margin-top: 0;">
-            <a href="https://contribution.aa.org/app/checkout.ssp?is=register&login=T&reset=T&newcust=T&fragment=login-register#login-register" target="_blank" rel="noopener noreferrer" class="osg-btn secondary">
-              CREAR CUENTA / REGISTRARSE
-            </a>
-          </div>
-        </div>
-
-        <!-- Sub-bloque B: Contribuir -->
-        <div class="osg-sub-block">
-          <div class="osg-sub-title">2. Grupos ya registrados</div>
-          <p style="margin-bottom: 8px; font-size: 0.9rem;">
-            Si ya dispone de su cuenta o grupo registrado, acceda directamente a realizar su aportación.
-          </p>
-          <div class="btn-container" style="margin-top: 0;">
-            <a href="https://contribution.aa.org/app/checkout.ssp?is=checkout#login-register" target="_blank" rel="noopener noreferrer" class="osg-btn">
-              CONTRIBUIR
-            </a>
-          </div>
-
-          <!-- Texto de instrucciones -->
-          <div class="contribution-instructions">
-            <p>Si selecciona tipo de contribución de grupo puede buscarlo:</p>
-            <ul>
-              <li><strong>Nombre:</strong> Sale una lista de los grupos con ese nombre, puede distinguirlo por la ciudad.</li>
-              <li><strong>Por Id:</strong> Poner el código de su grupo.</li>
-            </ul>
-            <p style="margin-top: 6px; margin-bottom: 0;">Puede utilizar <strong>Recurrencia</strong> para que se repita ese pago automáticamente.</p>
-          </div>
-        </div>
-
-      </div>
-
+    <div>
+      <h3>Contacto</h3>
+      <p>Español: (305) 642-2805</p>
+      <p>Inglés: (305) 461-2425</p>
     </div>
-
+    <div>
+      <h3>Dirección</h3>
+      <p>1770 West Flagler St. #1</p>
+      <p>Miami, FL 33135</p>
+    </div>
   </div>
-</main>
-
-<footer>
-<div class="footer-grid">
-<div>
-<h3>Distrito 17</h3>
-<p>Área 15 - Sur de Florida</p>
-</div>
-<div>
-<h3>Contacto</h3>
-<p>Español: (305) 642-2805</p>
-<p>Inglés: (305) 461-2425</p>
-</div>
-<div>
-<h3>Dirección</h3>
-<p>1770 West Flagler St. #1</p>
-<p>Miami, FL 33135</p>
-</div>
-</div>
 </footer>
 
+<script>
+function buscarEnPagina() {
+  const texto = document.getElementById("searchInput").value;
+  if (texto) {
+    window.find(texto);
+  }
+}
+</script>
+
 </body>
->>>>>>> 803dd035752881af82b964c8d3b3e35fd8ab1341
 </html>

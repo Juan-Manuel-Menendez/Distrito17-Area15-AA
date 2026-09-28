@@ -1,663 +1,320 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encuentra una Reunión | Distrito 17 Área 15 AA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Nosotros | Distrito 17 Área 15 AA</title>
 
-<style>
-:root{
-  --azul:#1f5560;
-  --dorado:#d5b05a;
-  --gris:#f4f4f4;
-  --negro:#111;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+    <style>
+        :root {
+            --primary-blue: #2b3b95;
+            --hover-blue: #1e2a6d;
+            --bg-gray: #f4f4f4;
+            --text-dark: #222;
+        }
 
-header{
-  background:#fff;
-  border-top: 8px solid #2f3fa0;
-  border-bottom: 8px solid #2f3fa0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.nav-container{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding:8px;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg-gray);
+            color: var(--text-dark);
+        }
 
-.logo{width:120px;height:auto;}
+        /* HEADER Y NAVEGACIÓN (TAMAÑO INTERMEDIO) */
+        header {
+            background: #fff;
+            border-top: 5px solid var(--primary-blue);
+            border-bottom: 5px solid var(--primary-blue);
+            padding: 12px 0;                               /* Altura media equilibrada */
+        }
 
-nav ul{
-  display:flex;
-  flex-wrap:wrap;
-  list-style:none;
-  gap:20px;
-}
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            gap: 20px;
+        }
 
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
-}
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-nav a:hover{
-  color:#16256b;
-}
+        /* LOGO CON TAMAÑO MEDIO PERFECTO */
+        .logo {
+            height: 100px;                                 /* Aumentado a un tamaño legible y proporcional */
+            width: auto;
+            display: block;
+        }
 
-/* Buscador en el encabezado */
-.search-box {
-  margin-left: auto;
-  display: flex;
-  gap: 5px;
-}
+        .back-btn {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: color 0.2s ease;
+        }
 
-.search-box input {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  outline: none;
-}
+        .back-btn:hover {
+            text-decoration: underline;
+        }
 
-.search-box button {
-  background: #2f3fa0;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-}
+        /* BUSCADOR PROPORCIONADO */
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.search-box button:hover {
-  background: #16256b;
-}
+        .search-box input {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            outline: none;
+            width: 220px;
+            color: #555;
+        }
 
-/* Sección Hero / Ayuda Principal */
-.help-hero{
-  max-width: 1000px;
-  margin: 40px auto;
-  background: linear-gradient(135deg, #d4e3fc 0%, #b3ccee 100%);
-  border: 3px solid #7a8bb8;
-  border-radius: 40px;
-  text-align: center;
-  padding: 50px 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
+        .search-box input::placeholder {
+            color: #888;
+        }
 
-.help-hero h1 {
-  font-size: 2.4rem;
-  color: #111;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
+        .search-box button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+        }
 
-.help-hero p.subtitle {
-  font-size: 1.3rem;
-  color: #222;
-  margin-bottom: 30px;
-}
+        .search-box button:hover {
+            background: var(--hover-blue);
+        }
 
-.help-hero h3 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
+        /* SECCIÓN HERO */
+        .hero {
+            max-width: 1100px;
+            margin: 25px auto;
+            background: #e6f0ff;
+            border: 3px solid #5a5a5a;
+            border-radius: 30px;
+            text-align: center;
+            padding: 30px 20px;
+        }
 
-.phone-link {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #111;
-  text-decoration: none;
-  border-bottom: 3px solid #111;
-  padding-bottom: 2px;
-  display: inline-block;
-  margin-bottom: 35px;
-}
+        .hero h1 {
+            font-size: 2.2rem;
+            color: #111;
+        }
 
-.phone-link:hover {
-  color: #2f3fa0;
-  border-color: #2f3fa0;
-}
+        .hero h2 {
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 1.2rem;
+            color: #444;
+        }
 
-/* Botones de opciones (Presenciales / En Línea) */
-.action-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
+        /* CONTENIDO DE LA PÁGINA */
+        .about-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
 
-.pill-btn {
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  padding: 18px 35px;
-  border-radius: 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+        .about-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
 
-.pill-btn:hover {
-  background: #2f3fa0;
-  transform: translateY(-2px);
-}
+        .about-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e6f0ff;
+            padding-bottom: 8px;
+        }
 
-/* Caja de Autoevaluación */
-.self-eval-box {
-  background: #1c2230;
-  color: #fff;
-  max-width: 650px;
-  margin: 0 auto 35px auto;
-  padding: 22px 30px;
-  border-radius: 45px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 1.05rem;
-  line-height: 1.4;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.2s, background 0.3s;
-}
+        .about-card p {
+            line-height: 1.6;
+            margin-bottom: 12px;
+            color: #333;
+        }
 
-.self-eval-box:hover {
-  background: #2f3fa0;
-  transform: translateY(-2px);
-}
+        .about-card ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
 
-/* Sección de la App de Guía de Reuniones con la sillita */
-.app-guide-section {
-  text-align: center;
-  margin-bottom: 30px;
-}
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
 
-.app-guide-link {
-  display: inline-block;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
+        .footer-grid {
+            max-width: 1400px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-.app-guide-link:hover {
-  transform: translateY(-2px);
-}
+        .footer-grid h3 {
+            margin-bottom: 10px;
+            color: #d5b05a;
+        }
 
-.app-logo-img {
-  width: 75px;
-  height: 75px;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 10px auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
+        /* VISTA MÓVIL */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
 
-.app-guide-text {
-  color: #d32f2f;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
+            .logo {
+                height: 60px;
+            }
 
-.app-guide-link:hover .app-guide-text {
-  text-decoration: underline;
-}
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 15px;
+            }
 
-footer{
-  background:#111;
-  color:white;
-  padding:40px;
-  margin-top:50px;
-}
+            .header-left {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-.footer-grid{
-  max-width: 1400px;
-  margin: auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:25px;
-}
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
 
-@media(max-width:768px){
-  .nav-container{flex-direction:column;}
-  .footer-grid{grid-template-columns:1fr;}
-  .help-hero h1{font-size:1.8rem;}
-  .phone-link{font-size:1.7rem;}
-  .search-box {margin-left: 0; width: 100%; justify-content: center;}
-}
-</style>
+            .hero h1 { font-size: 1.6rem; }
+            .hero h2 { font-size: 1.05rem; }
+            .hero { border-radius: 20px; margin: 15px; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-<div class="nav-container">
-<a href="index.html">
-  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-  <li><a href="esto-es-aa.html">Esto es AA</a></li>
-  <li><a href="pasar-el-mensaje.html" style="font-weight:bold; color:#2f3fa0;">Pasar el Mensaje</a></li>
-  <li><a href="mapas.html">Mapas</a></li>
-  <li><a href="calendario.html">Calendario</a></li>
-  <li><a href="eventos.html">Eventos y Asambleas</a></li>
-  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-  <li><a href="documentos.html">Documentos del Distrito</a></li>
-  <li><a href="numeros-grupo.html">Números de grupo</a></li>
-  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-  <li><a href="revistas.html">Revistas</a></li>
-  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-  <li><a href="profesionales.html">Para Profesionales</a></li>
-  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
-/ul>
-</nav>
+    <div class="nav-container">
+        <!-- Lado izquierdo: Logo y Enlace Volver al inicio -->
+        <div class="header-left">
+            <a href="index.html">
+                <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17 AA">
+            </a>
+            <a href="index.html" class="back-btn">&larr; Volver al inicio</a>
+        </div>
 
-<!-- Barra de Búsqueda -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="Buscar texto...">
-  <button onclick="buscarEnPagina()">Buscar</button>
-</div>
-
-</div>
+        <!-- Lado derecho: Buscador -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar texto...">
+            <button onclick="buscarEnPagina()">Buscar</button>
+        </div>
+    </div>
 </header>
 
-<main>
-  <section class="help-hero">
-    <h1>Encuentra una reunión de AA en Miami-Dade</h1>
-    <p class="subtitle">Obtén ayuda ahora para un problema con la bebida.</p>
-    
-    <h3>LÍNEA DE AYUDA LAS 24 HORAS:</h3>
-    <a href="tel:3056422805" class="phone-link">(305) 642-2805</a>
+<section class="hero">
+    <h1>Acerca de Nosotros</h1>
+    <h2>Grupos de habla hispana de Miami-Dade y Broward</h2>
+</section>
 
-    <div class="action-buttons">
-      <a href="https://miamialcoholicosanonimos.org/reuniones-en-espanol-2/" target="_blank" class="pill-btn">REUNIONES PRESENCIALES</a>
-      <a href="https://miamialcoholicosanonimos.org/reunionesvirtuales/" target="_blank" class="pill-btn">REUNIONES EN LÍNEA</a>
-    </div>
+<main class="about-container">
+    <section class="about-card">
+        <h3>¿Qué es el Distrito 17?</h3>
+        <p>El Distrito 17 reúne a los grupos de habla hispana de Alcohólicos Anónimos en los condados de Miami-Dade y Broward, pertenecientes al Área 15 (Sur de Florida y Bahamas).</p>
+        <p>Su propósito es coordinar el trabajo de servicio, apoyar a los grupos locales y mantener la comunicación con la estructura de Servicios Generales de A.A.</p>
+    </section>
 
-    <a href="https://www.aa.org/es/self-assessment" target="_blank" class="self-eval-box">
-      AUTOEVALUACIÓN EN LÍNEA: 12 PREGUNTAS QUE SOLO USTED PUEDE RESPONDER.
-    </a>
+    <section class="about-card">
+        <h3>Intergrupo Hispano y Distrito 17</h3>
+        <p>El Distrito 17 y la Oficina Intergrupal Hispana comparten el mismo local, pero cumplen funciones diferentes.</p>
+        <p>La Oficina Intergrupal Hispana proporciona información sobre reuniones y mantiene las líneas telefónicas de ayuda.</p>
+        <p>El Distrito 17 coordina el trabajo de servicio de los grupos y los comités del distrito.</p>
+    </section>
 
-    <!-- Sección con la imagen de la sillita y enlace a la app -->
-    <div class="app-guide-section">
-      <a href="https://www.aa.org/meeting-guide-app" target="_blank" class="app-guide-link">
-        <img src="imagenes/sillita.png" alt="Aplicación de Guía de Reuniones" class="app-logo-img">
-        <span class="app-guide-text">Aplicación de guía de reuniones</span>
-      </a>
-    </div>
-  </section>
+    <section class="about-card">
+        <h3>Reuniones del Distrito</h3>
+        <p>Las reuniones del Distrito 17 se celebran el primer y tercer lunes de cada mes a las 8:00 PM.</p>
+        <p>Las reuniones tienen lugar en 1770 West Flagler St. #1, Miami, FL 33135.</p>
+        <p>Estas reuniones permiten la comunicación entre los grupos, los comités y la estructura de servicio del Área 15.</p>
+        <ul>
+            <li><strong>1er Lunes de Mes:</strong> Reunión de trabajo del Distrito a las 8:00 PM.</li>
+            <li><strong>3er Lunes de Mes:</strong> Reunión de estudio a las 8:00 PM.</li>
+            <li><strong>Lugar:</strong> 1770 W Flagler St. #1, Miami, FL 33135.</li>
+        </ul>
+    </section>
+
+    <section class="about-card">
+        <h3>Alcance del Distrito</h3>
+        <p>El Distrito 17 sirve a grupos de habla hispana ubicados en los condados de Miami-Dade y Broward.</p>
+        <p>Actualmente existen grupos activos en Miami, Hialeah, Homestead, Coral Gables, Miami Beach, Pembroke Pines, Margate y Fort Lauderdale.</p>
+        <p>El Distrito trabaja para fortalecer la unidad y el servicio entre todos los grupos que forman parte de su ámbito geográfico.</p>
+    </section>
+
+    <section class="about-card">
+        <h3>Comités de Servicio</h3>
+        <p>Los comités de servicio ayudan al Distrito 17 a llevar el mensaje de Alcohólicos Anónimos a quienes aún sufren.</p>
+        <p>Entre los comités del Distrito se encuentran Información Pública, Cooperación con la Comunidad Profesional, Instituciones Correccionales y Tratamiento.</p>
+        <p>Los comités colaboran con los grupos y con el Área 15 en diferentes actividades de servicio.</p>
+    </section>
+
+    <section class="about-card">
+        <h3>Aviso</h3>
+        <p>Este sitio web es un servicio del Distrito 17 del Área 15 de Alcohólicos Anónimos.</p>
+        <p>El contenido tiene fines informativos y de servicio y procura respetar los principios y tradiciones de Alcohólicos Anónimos.</p>
+    </section>
 </main>
 
 <footer>
-<div class="footer-grid">
-<div>
-<h3>Distrito 17</h3>
-<p>Área 15 - Sur de Florida</p>
-</div>
-<div>
-<h3>Contacto</h3>
-<p>Español: (305) 642-2805</p>
-<p>Inglés: (305) 461-2425</p>
-</div>
-<div>
-<h3>Dirección</h3>
-<p>1770 West Flagler St. #1</p>
-<p>Miami, FL 33135</p>
-</div>
-</div>
+    <div class="footer-grid">
+        <div>
+            <h3>Distrito 17</h3>
+            <p>Área 15 - Sur de Florida</p>
+        </div>
+        <div>
+            <h3>Contacto</h3>
+            <p>Español: (305) 642-2805</p>
+            <p>Inglés: (305) 461-2425</p>
+        </div>
+        <div>
+            <h3>Dirección</h3>
+            <p>1770 West Flagler St. #1</p>
+            <p>Miami, FL 33135</p>
+        </div>
+    </div>
 </footer>
 
 <script>
-function buscarEnPagina() {
-  const texto = document.getElementById("searchInput").value;
-  if (texto) {
-    window.find(texto);
-  }
-}
+    function buscarEnPagina() {
+        const texto = document.getElementById("searchInput").value;
+        if (texto) {
+            window.find(texto);
+        }
+    }
 </script>
 
 </body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encuentra una Reunión | Distrito 17 Área 15 AA</title>
-
-<style>
-:root{
-  --azul:#1f5560;
-  --dorado:#d5b05a;
-  --gris:#f4f4f4;
-  --negro:#111;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
-
-header{
-  background:#fff;
-  border-top: 8px solid #2f3fa0;
-  border-bottom: 8px solid #2f3fa0;
-}
-
-.nav-container{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding:8px;
-}
-
-.logo{width:120px;height:auto;}
-
-nav ul{
-  display:flex;
-  flex-wrap:wrap;
-  list-style:none;
-  gap:20px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#16256b;
-}
-
-/* Buscador en el encabezado */
-.search-box {
-  margin-left: auto;
-  display: flex;
-  gap: 5px;
-}
-
-.search-box input {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.search-box button {
-  background: #2f3fa0;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.search-box button:hover {
-  background: #16256b;
-}
-
-/* Sección Hero / Ayuda Principal */
-.help-hero{
-  max-width: 1000px;
-  margin: 40px auto;
-  background: linear-gradient(135deg, #d4e3fc 0%, #b3ccee 100%);
-  border: 3px solid #7a8bb8;
-  border-radius: 40px;
-  text-align: center;
-  padding: 50px 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.help-hero h1 {
-  font-size: 2.4rem;
-  color: #111;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.help-hero p.subtitle {
-  font-size: 1.3rem;
-  color: #222;
-  margin-bottom: 30px;
-}
-
-.help-hero h3 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-.phone-link {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #111;
-  text-decoration: none;
-  border-bottom: 3px solid #111;
-  padding-bottom: 2px;
-  display: inline-block;
-  margin-bottom: 35px;
-}
-
-.phone-link:hover {
-  color: #2f3fa0;
-  border-color: #2f3fa0;
-}
-
-/* Botones de opciones (Presenciales / En Línea) */
-.action-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.pill-btn {
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  padding: 18px 35px;
-  border-radius: 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.pill-btn:hover {
-  background: #2f3fa0;
-  transform: translateY(-2px);
-}
-
-/* Caja de Autoevaluación */
-.self-eval-box {
-  background: #1c2230;
-  color: #fff;
-  max-width: 650px;
-  margin: 0 auto 35px auto;
-  padding: 22px 30px;
-  border-radius: 45px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 1.05rem;
-  line-height: 1.4;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.2s, background 0.3s;
-}
-
-.self-eval-box:hover {
-  background: #2f3fa0;
-  transform: translateY(-2px);
-}
-
-/* Sección de la App de Guía de Reuniones con la sillita */
-.app-guide-section {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.app-guide-link {
-  display: inline-block;
-  text-decoration: none;
-  transition: transform 0.2s;
-}
-
-.app-guide-link:hover {
-  transform: translateY(-2px);
-}
-
-.app-logo-img {
-  width: 75px;
-  height: 75px;
-  border-radius: 12px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 10px auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.app-guide-text {
-  color: #d32f2f;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.app-guide-link:hover .app-guide-text {
-  text-decoration: underline;
-}
-
-footer{
-  background:#111;
-  color:white;
-  padding:40px;
-  margin-top:50px;
-}
-
-.footer-grid{
-  max-width: 1400px;
-  margin: auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:25px;
-}
-
-@media(max-width:768px){
-  .nav-container{flex-direction:column;}
-  .footer-grid{grid-template-columns:1fr;}
-  .help-hero h1{font-size:1.8rem;}
-  .phone-link{font-size:1.7rem;}
-  .search-box {margin-left: 0; width: 100%; justify-content: center;}
-}
-</style>
-</head>
-<body>
-
-<header>
-<div class="nav-container">
-<a href="index.html">
-  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="esto-es-aa.html">Esto es AA</a></li>
-<li><a href="calendario.html">Calendario</a></li>
-<li><a href="eventos.html">Eventos y Asambleas</a></li>
-<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-<li><a href="revistas.html">Revistas</a></li>
-<li><a href="documentos.html">Documentos del Distrito</a></li>
-<li><a href="profesionales.html">Para Profesionales</a></li>
-<li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-<li><a href="numeros-grupo.html">Números de grupo</a></li>
-<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-<li><a href="mapas.html">Mapas</a></li>
-<li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
-/ul>
-</nav>
-
-<!-- Barra de Búsqueda -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="Buscar texto...">
-  <button onclick="buscarEnPagina()">Buscar</button>
-</div>
-
-</div>
-</header>
-
-<main>
-  <section class="help-hero">
-    <h1>Encuentra una reunión de AA en Miami-Dade</h1>
-    <p class="subtitle">Obtén ayuda ahora para un problema con la bebida.</p>
-    
-    <h3>LÍNEA DE AYUDA LAS 24 HORAS:</h3>
-    <a href="tel:3056422805" class="phone-link">(305) 642-2805</a>
-
-    <div class="action-buttons">
-      <a href="https://miamialcoholicosanonimos.org/reuniones-en-espanol-2/" target="_blank" class="pill-btn">REUNIONES PRESENCIALES</a>
-      <a href="https://miamialcoholicosanonimos.org/reunionesvirtuales/" target="_blank" class="pill-btn">REUNIONES EN LÍNEA</a>
-    </div>
-
-    <a href="https://www.aa.org/es/self-assessment" target="_blank" class="self-eval-box">
-      AUTOEVALUACIÓN EN LÍNEA: 12 PREGUNTAS QUE SOLO USTED PUEDE RESPONDER.
-    </a>
-
-    <!-- Sección con la imagen de la sillita y enlace a la app -->
-    <div class="app-guide-section">
-      <a href="https://www.aa.org/meeting-guide-app" target="_blank" class="app-guide-link">
-        <img src="imagenes/sillita.png" alt="Aplicación de Guía de Reuniones" class="app-logo-img">
-        <span class="app-guide-text">Aplicación de guía de reuniones</span>
-      </a>
-    </div>
-  </section>
-</main>
-
-<footer>
-<div class="footer-grid">
-<div>
-<h3>Distrito 17</h3>
-<p>Área 15 - Sur de Florida</p>
-</div>
-<div>
-<h3>Contacto</h3>
-<p>Español: (305) 642-2805</p>
-<p>Inglés: (305) 461-2425</p>
-</div>
-<div>
-<h3>Dirección</h3>
-<p>1770 West Flagler St. #1</p>
-<p>Miami, FL 33135</p>
-</div>
-</div>
-</footer>
-
-<script>
-function buscarEnPagina() {
-  const texto = document.getElementById("searchInput").value;
-  if (texto) {
-    window.find(texto);
-  }
-}
-</script>
-
-</body>
->>>>>>> 803dd035752881af82b964c8d3b3e35fd8ab1341
 </html>

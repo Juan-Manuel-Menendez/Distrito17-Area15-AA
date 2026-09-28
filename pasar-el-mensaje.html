@@ -15,7 +15,7 @@
   --negro:#111;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
+body {font-family:Arial,Helvetica,sans-serif; background: var(--gris); color:#222;}
 
 header{
   background:#fff;
@@ -24,37 +24,63 @@ header{
 }
 
 .nav-container{
-  max-width:1400px;
+  max-width: 1400px;
   margin:auto;
   display:flex;
   align-items:center;
-  gap:30px;
-  padding:8px;
+  gap: 30px;
+  padding: 12px 20px;
 }
 
-.logo{width:120px;height:auto;}
+.logo{width:100px; height:auto;}
 
-nav ul{
-  display:flex;
-  flex-wrap:wrap;
-  list-style:none;
-  gap:20px;
+.back-link {
+  text-decoration: none;
+  color: #16256b;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
+.back-link:hover {
+  color: #2f3fa0;
+  text-decoration: underline;
 }
 
-nav a:hover{
-  color:#16256b;
+/* Buscador en el encabezado */
+.search-box {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  outline: none;
+  width: 220px;
+}
+
+.search-box button {
+  background: #2f3fa0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-box button:hover {
+  background: #16256b;
 }
 
 /* Encabezado de la Sección */
 .page-header{
-  max-width:1100px;
+  max-width: 1100px;
   margin:30px auto 20px auto;
   text-align:center;
   padding:20px;
@@ -174,9 +200,11 @@ footer{
 }
 
 @media(max-width:768px){
-  .nav-container{flex-direction:column;}
+  .nav-container{flex-direction:column; gap: 15px;}
   .footer-grid{grid-template-columns:1fr;}
   .page-header h1{font-size:2rem;}
+  .search-box {margin-left: 0; width: 100%; justify-content: center;}
+  .search-box input {width: 70%;}
 }
 </style>
 </head>
@@ -187,25 +215,14 @@ footer{
 <a href="index.html">
   <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
 </a>
-<nav>
-<ul>
-  <li><a href="index.html">Inicio</a></li>
-  <li><a href="esto-es-aa.html">Esto es AA</a></li>
-  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
-  <li><a href="mapas.html">Mapas</a></li>
-  <li><a href="calendario.html">Calendario</a></li>
-  <li><a href="eventos.html">Eventos y Asambleas</a></li>
-  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-  <li><a href="documentos.html">Documentos del Distrito</a></li>
-  <li><a href="numeros-grupo.html">Números de grupo</a></li>
-  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-  <li><a href="revistas.html">Revistas</a></li>
-  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-  <li><a href="profesionales.html">Para Profesionales</a></li>
-  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
-</ul>
-</nav>
+
+<a href="index.html" class="back-link">← Volver al inicio</a>
+
+<!-- Barra de Búsqueda -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Buscar texto...">
+  <button onclick="buscarEnPagina()">Buscar</button>
+</div>
 </div>
 </header>
 
@@ -279,6 +296,15 @@ footer{
 </div>
 </div>
 </footer>
+
+<script>
+function buscarEnPagina() {
+  const texto = document.getElementById("searchInput").value;
+  if (texto) {
+    window.find(texto);
+  }
+}
+</script>
 
 </body>
 </html>

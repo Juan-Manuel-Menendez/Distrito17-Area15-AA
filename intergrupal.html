@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,48 +6,135 @@
 <title>Oficina Intergrupal | Distrito 17 - Área 15 AA</title>
 
 <style>
-:root{
-  --azul:#1f5560;
-  --dorado:#d5b05a;
-  --gris:#f4f4f4;
-  --negro:#111;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
-
-header{
-  background:#fff;
-  border-top: 8px solid #2f3fa0;
-  border-bottom: 8px solid #2f3fa0;
+:root {
+  --azul: #2f3fa0;
+  --azul-oscuro: #16256b;
+  --dorado: #d5b05a;
+  --gris-fondo: #f8f9fa;
+  --gris-card: #ffffff;
+  --texto-principal: #222222;
 }
 
-.nav-container{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding:8px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo{width:120px;height:auto;}
-
-nav ul{
-  display:flex;
-  flex-wrap:wrap;
-  list-style:none;
-  gap:20px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--gris-fondo);
+  color: var(--texto-principal);
+  line-height: 1.6;
 }
 
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
+header {
+  background: #fff;
+  border-top: 8px solid var(--azul);
+  border-bottom: 8px solid var(--azul);
+  padding: 15px 0;
 }
 
-nav a:hover{
-  color:#16256b;
+.nav-container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Agrupamos el logo y el enlace a la izquierda */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.back-link {
+  text-decoration: none;
+  color: var(--azul);
+  font-weight: bold;
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--azul-oscuro);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  outline: none;
+  width: 220px;
+  color: #555;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: var(--azul);
+}
+
+.search-btn {
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: var(--azul-oscuro);
+}
+
+/* Zona del título reducida */
+.hero {
+  max-width: 1000px;
+  margin: 15px auto 10px auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f4ff 100%);
+  border: 1px solid #d0dbe8;
+  border-radius: 14px;
+  text-align: center;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  color: #1a237e;
+  margin-bottom: 4px;
+}
+
+.hero h2 {
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #555;
+}
+
+/* Contenido Principal */
+.content-container {
+  max-width: 1200px;
+  margin: 15px auto 40px auto;
+  padding: 0 20px;
 }
 
 /* Barra superior de anuncio (The Messenger) con enlace */
@@ -63,29 +149,15 @@ nav a:hover{
   letter-spacing: 0.5px;
   border-radius: 6px;
   max-width: 500px;
-  margin: 30px auto 20px auto;
+  margin: 0 auto 25px auto;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   text-decoration: none;
   transition: 0.3s;
 }
 
 .banner-bar:hover {
-  background-color: #2f3fa0;
+  background-color: var(--azul);
   transform: translateY(-2px);
-}
-
-/* Contenido Principal */
-.content-container{
-  max-width: 1200px;
-  margin: 20px auto 50px auto;
-  padding: 0 20px;
-}
-
-.content-container h1 {
-  text-align: center;
-  font-size: 2.3rem;
-  color: #16256b;
-  margin-bottom: 40px;
 }
 
 /* Estructura en dos columnas */
@@ -142,7 +214,7 @@ nav a:hover{
 
 .text-card h3 {
   font-size: 1.2rem;
-  color: #2f3fa0;
+  color: var(--azul);
   margin-bottom: 15px;
 }
 
@@ -151,7 +223,7 @@ nav a:hover{
   color: #333;
   line-height: 1.6;
   padding-left: 15px;
-  border-left: 4px solid #2f3fa0;
+  border-left: 4px solid var(--azul);
   font-size: 1.05rem;
 }
 
@@ -161,334 +233,70 @@ nav a:hover{
   color: #444;
 }
 
-footer{
-  background:#111;
-  color:white;
-  padding:40px;
-  margin-top:60px;
+footer {
+  background: #111;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 60px;
 }
 
-.footer-grid{
-  max-width: 1400px;
-  margin: auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:25px;
-}
-
-@media(max-width:768px){
-  .nav-container{flex-direction:column;}
-  .intergroup-grid{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr;}
-  .content-container h1 {font-size: 1.8rem;}
-}
-</style>
-</head>
-<body>
-
-<header>
-<div class="nav-container">
-<a href="index.html">
-  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-  <li><a href="esto-es-aa.html">Esto es AA</a></li>
-  <li><a href="pasar-el-mensaje.html">Pasar el Mensaje</a></li>
-  <li><a href="mapas.html">Mapas</a></li>
-  <li><a href="calendario.html">Calendario</a></li>
-  <li><a href="eventos.html">Eventos y Asambleas</a></li>
-  <li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-  <li><a href="documentos.html">Documentos del Distrito</a></li>
-  <li><a href="numeros-grupo.html">Números de grupo</a></li>
-  <li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-  <li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-  <li><a href="revistas.html">Revistas</a></li>
-  <li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-  <li><a href="profesionales.html">Para Profesionales</a></li>
-  <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
-</ul>
-</nav>
-</div>
-</header>
-
-<main class="content-container">
-  <a href="https://aamiamidade.org/the-messenger" target="_blank" rel="noopener noreferrer" class="banner-bar">
-    LEE EL BOLETÍN INFORMATIVO DE THE MESSENGER.
-  </a>
-
-  <h1>Intergrupo de Miami-Dade</h1>
-
-  <div class="intergroup-grid">
-    <!-- Columna de Imágenes (Ambas con el mismo enlace) -->
-    <div class="images-column">
-      <a href="https://miamialcoholicosanonimos.org" target="_blank" rel="noopener noreferrer" class="img-card">
-        <img src="imagenes/intergrupo.png" alt="Intergrupo de Miami-Dade Web">
-      </a>
-      <a href="https://miamialcoholicosanonimos.org" target="_blank" rel="noopener noreferrer" class="img-card">
-        <img src="imagenes/intergrupo-oficina.png" alt="Your Intergroup Office">
-      </a>
-    </div>
-
-    <!-- Columna de Texto dividida en dos tarjetas independientes -->
-    <div class="text-column-container">
-      <div class="text-card">
-        <h3>Declaración de misión :</h3>
-        <div class="mission-box">
-          "El propósito principal del Intergrupo de Miami-Dade es llevar el mensaje de recuperación al alcohólico que aún sufre y mantener la unidad y el apoyo mutuo entre sus grupos. Será nuestra responsabilidad colectiva proteger y seguir los principios de Alcohólicos Anónimos."
-        </div>
-      </div>
-
-      <div class="text-card">
-        <h3>Nuestra Oficina</h3>
-        <p class="description-text">
-          Esta oficina es un centro neurálgico para coordinar reuniones, distribuir literatura, brindar apoyo a los recién llegados y fomentar la colaboración entre los grupos de AA en la región. Su objetivo es garantizar que, cuando alguien pida ayuda, AA siempre esté presente.
-        </p>
-      </div>
-    </div>
-  </div>
-</main>
-
-<footer>
-<div class="footer-grid">
-<div>
-<h3>Distrito 17</h3>
-<p>Área 15 - Sur de Florida</p>
-</div>
-<div>
-<h3>Contacto</h3>
-<p>Español: (305) 642-2805</p>
-<p>Inglés: (305) 461-2425</p>
-</div>
-<div>
-<h3>Dirección</h3>
-<p>1770 West Flagler St. #1</p>
-<p>Miami, FL 33135</p>
-</div>
-</div>
-</footer>
-
-</body>
-=======
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oficina Intergrupal | Distrito 17 - Área 15 AA</title>
-
-<style>
-:root{
-  --azul:#1f5560;
-  --dorado:#d5b05a;
-  --gris:#f4f4f4;
-  --negro:#111;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--gris);color:#222;}
-
-header{
-  background:#fff;
-  border-top: 8px solid #2f3fa0;
-  border-bottom: 8px solid #2f3fa0;
-}
-
-.nav-container{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  gap:30px;
-  padding:8px;
-}
-
-.logo{width:120px;height:auto;}
-
-nav ul{
-  display:flex;
-  flex-wrap:wrap;
-  list-style:none;
-  gap:20px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#222;
-  font-size:0.95rem;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#16256b;
-}
-
-/* Barra superior de anuncio (The Messenger) con enlace */
-.banner-bar {
-  display: block;
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 0.95rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  border-radius: 6px;
-  max-width: 500px;
-  margin: 30px auto 20px auto;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.banner-bar:hover {
-  background-color: #2f3fa0;
-  transform: translateY(-2px);
-}
-
-/* Contenido Principal */
-.content-container{
+.footer-grid {
   max-width: 1200px;
-  margin: 20px auto 50px auto;
-  padding: 0 20px;
-}
-
-.content-container h1 {
-  text-align: center;
-  font-size: 2.3rem;
-  color: #16256b;
-  margin-bottom: 40px;
-}
-
-/* Estructura en dos columnas */
-.intergroup-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.images-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.img-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  display: block;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.img-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-.img-card img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  border-radius: 6px;
-}
-
-.text-column-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.text-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-}
-
-.text-card h3 {
-  font-size: 1.2rem;
-  color: #2f3fa0;
-  margin-bottom: 15px;
-}
-
-.mission-box {
-  font-style: italic;
-  color: #333;
-  line-height: 1.6;
-  padding-left: 15px;
-  border-left: 4px solid #2f3fa0;
-  font-size: 1.05rem;
-}
-
-.description-text {
-  font-size: 1.02rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-footer{
-  background:#111;
-  color:white;
-  padding:40px;
-  margin-top:60px;
-}
-
-.footer-grid{
-  max-width: 1400px;
   margin: auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
 }
 
-@media(max-width:768px){
-  .nav-container{flex-direction:column;}
-  .intergroup-grid{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr;}
-  .content-container h1 {font-size: 1.8rem;}
+.footer-grid h3 {
+  color: var(--dorado);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.footer-grid p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .nav-container { flex-direction: column; gap: 15px; text-align: center; }
+  .header-left { flex-direction: column; gap: 10px; }
+  .search-box { width: 100%; justify-content: center; }
+  .search-input { width: 60%; }
+  .intergroup-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="nav-container">
-<a href="index.html">
-  <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
-</a>
-<nav>
-<ul>
-<li><a href="index.html">Inicio</a></li>
-<li><a href="esto-es-aa.html">Esto es AA</a></li>
-<li><a href="calendario.html">Calendario</a></li>
-<li><a href="eventos.html">Eventos y Asambleas</a></li>
-<li><a href="centro-RSG.html">Centro RSG y MCD</a></li>
-<li><a href="revistas.html">Revistas</a></li>
-<li><a href="documentos.html">Documentos del Distrito</a></li>
-<li><a href="profesionales.html">Para Profesionales</a></li>
-<li><a href="contribuciones.html" target="_blank" rel="noopener noreferrer">Contribuciones</a></li>
-<li><a href="numeros-grupo.html">Números de grupo</a></li>
-<li><a href="https://area15aa.org/linguistic/" target="_blank" rel="noopener noreferrer">Linguistico</a></li>
-<li><a href="mapas.html">Mapas</a></li>
-<li><a href="intergrupal.html">Oficina Intergrupal</a></li>
-<li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li></ul>
-</nav>
-</div>
+  <div class="nav-container">
+    <div class="header-left">
+      <a href="index.html">
+        <img src="imagenes/logo_aa.png" class="logo" alt="Distrito 17">
+      </a>
+      <a href="index.html" class="back-link">&larr; Volver al inicio</a>
+    </div>
+    
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar texto...">
+      <button class="search-btn" onclick="buscarEnPagina()">Buscar</button>
+    </div>
+  </div>
 </header>
+
+<section class="hero">
+  <h1>Oficina Intergrupal</h1>
+  <h2>Intergrupo de Miami-Dade y servicios de apoyo regional</h2>
+</section>
 
 <main class="content-container">
   <a href="https://aamiamidade.org/the-messenger" target="_blank" rel="noopener noreferrer" class="banner-bar">
     LEE EL BOLETÍN INFORMATIVO DE THE MESSENGER.
   </a>
-
-  <h1>Intergrupo de Miami-Dade</h1>
 
   <div class="intergroup-grid">
     <!-- Columna de Imágenes (Ambas con el mismo enlace) -->
@@ -504,7 +312,7 @@ footer{
     <!-- Columna de Texto dividida en dos tarjetas independientes -->
     <div class="text-column-container">
       <div class="text-card">
-        <h3>Declaración de misión :</h3>
+        <h3>Declaración de misión:</h3>
         <div class="mission-box">
           "El propósito principal del Intergrupo de Miami-Dade es llevar el mensaje de recuperación al alcohólico que aún sufre y mantener la unidad y el apoyo mutuo entre sus grupos. Será nuestra responsabilidad colectiva proteger y seguir los principios de Alcohólicos Anónimos."
         </div>
@@ -521,24 +329,32 @@ footer{
 </main>
 
 <footer>
-<div class="footer-grid">
-<div>
-<h3>Distrito 17</h3>
-<p>Área 15 - Sur de Florida</p>
-</div>
-<div>
-<h3>Contacto</h3>
-<p>Español: (305) 642-2805</p>
-<p>Inglés: (305) 461-2425</p>
-</div>
-<div>
-<h3>Dirección</h3>
-<p>1770 West Flagler St. #1</p>
-<p>Miami, FL 33135</p>
-</div>
-</div>
+  <div class="footer-grid">
+    <div>
+      <h3>Distrito 17</h3>
+      <p>Área 15 - Sur de Florida</p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>Español: (305) 642-2805</p>
+      <p>Inglés: (305) 461-2425</p>
+    </div>
+    <div>
+      <h3>Dirección</h3>
+      <p>1770 West Flagler St. #1</p>
+      <p>Miami, FL 33135</p>
+    </div>
+  </div>
 </footer>
 
+<script>
+function buscarEnPagina() {
+  const texto = document.getElementById("searchInput").value;
+  if (texto) {
+    window.find(texto);
+  }
+}
+</script>
+
 </body>
->>>>>>> 803dd035752881af82b964c8d3b3e35fd8ab1341
 </html>
