@@ -44,7 +44,6 @@ header {
   padding: 0 20px;
 }
 
-/* Agrupamos el logo y el enlace a la izquierda */
 .header-left {
   display: flex;
   align-items: center;
@@ -52,7 +51,7 @@ header {
 }
 
 .logo {
-  width: 110px;
+  width: 100px;
   height: auto;
   display: block;
 }
@@ -106,7 +105,6 @@ header {
   background-color: var(--azul-oscuro);
 }
 
-/* Zona del título reducida y más compacta */
 .hero {
   max-width: 1000px;
   margin: 15px auto 10px auto;
@@ -133,18 +131,112 @@ header {
 .events-wrapper {
   max-width: 1000px;
   margin: 15px auto 40px auto;
-  padding: 20px;
+  padding: 30px;
   background: var(--gris-card);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
   border: 1px solid #eaeaea;
 }
 
-#google-events-container iframe {
-  border: 0;
-  width: 100%;
-  height: 600px;
-  border-radius: 12px;
+/* Estilo de fila de evento inspirado en la referencia */
+.event-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.event-row:last-child {
+  border-bottom: none;
+}
+
+/* Cajita de fecha tipo bloque */
+.event-date-box {
+  background: #eef2f7;
+  border: 1px solid #d8e2ec;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 75px;
+  padding: 8px 4px;
+  margin-right: 24px;
+  flex-shrink: 0;
+}
+
+.date-box-month {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #555;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.date-box-day {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #111;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.date-box-sub {
+  display: block;
+  font-size: 0.55rem;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Contenido del evento */
+.event-details {
+  flex-grow: 1;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  color: #111;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.event-links {
+  font-size: 0.85rem;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+.event-links a {
+  color: var(--azul);
+  text-decoration: none;
+}
+
+.event-links a:hover {
+  text-decoration: underline;
+}
+
+/* Botón Ver Evento estilo negro redondeado */
+.btn-ver-evento {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-ver-evento:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
 }
 
 footer {
@@ -170,6 +262,7 @@ footer {
 
 .footer-grid p {
   font-size: 0.95rem;
+  font-weight: 400;
   color: #ccc;
   margin-bottom: 6px;
 }
@@ -181,6 +274,8 @@ footer {
   .search-input { width: 60%; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.5rem; }
+  .event-row { flex-direction: column; gap: 15px; }
+  .event-date-box { align-self: flex-start; }
 }
 </style>
 </head>
@@ -208,11 +303,8 @@ footer {
 </section>
 
 <main class="events-wrapper">
-  <div id="google-events-container">
-    <iframe 
-      src="https://calendar.google.com/calendar/embed?src=distrito17area15aa%40gmail.com&ctz=America%2FNew_York&hl=es&mode=AGENDA" 
-      scrolling="no">
-    </iframe>
+  <div id="custom-calendar-container">
+    <p style="text-align: center; color: #555; padding: 20px;">Cargando eventos del distrito...</p>
   </div>
 </main>
 
@@ -242,6 +334,74 @@ function buscarEnPagina() {
     window.find(texto);
   }
 }
+
+// CONEXIÓN CON LA API Y RENDERIZADO IDÉNTICO A LA REFERENCIA
+const API_KEY = 'AIzaSyDLrHDgmIGFsEo3tKdRT0TF3qasXdvobWE'; 
+const CALENDAR_ID = 'distrito17area15aa@gmail.com';
+const now = new Date().toISOString();
+const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${now}`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('custom-calendar-container');
+    container.innerHTML = '';
+
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = '<p style="text-align: center; color: #555; padding: 20px;">No hay eventos próximos programados.</p>';
+      return;
+    }
+
+    let htmlFinal = '';
+
+    data.items.forEach(item => {
+      const fechaInicioStr = item.start.dateTime || item.start.date;
+      const fechaObj = new Date(fechaInicioStr);
+
+      // Mes en formato corto (ej: OCT, NOV)
+      const mesCorto = fechaObj.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '').toUpperCase();
+      const diaNum = fechaObj.getDate();
+
+      // Hora o indicativo de todo el día
+      const esTodoElDia = !item.start.dateTime;
+      let horarioTexto = esTodoElDia ? 'Todo el día' : fechaObj.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+
+      // Si tiene fecha de fin y es distinta, podemos mostrar un aviso opcional
+      let subTextoFecha = '';
+      if (item.end) {
+        const fechaFinObj = new Date(item.end.dateTime || item.end.date);
+        // Si dura más de un día o similar se puede reflejar, por defecto mostramos la hora o ubicación
+      }
+
+      const titulo = item.summary || 'Sin título';
+      const enlaceGoogle = item.htmlLink || '#';
+      const ubicacion = item.location ? `📍 ${item.location}` : '';
+
+      htmlFinal += `
+        <div class="event-row">
+          <div class="event-date-box">
+            <span class="date-box-month">${mesCorto}</span>
+            <span class="date-box-day">${diaNum}</span>
+            <span class="date-box-sub">EVENTO</span>
+          </div>
+          <div class="event-details">
+            <h3 class="event-title">${titulo}</h3>
+            <div class="event-meta">${horarioTexto} ${ubicacion ? '· ' + ubicacion : ''}</div>
+            <div class="event-links">
+              <a href="${enlaceGoogle}" target="_blank">Calendario de Google</a> · <a href="${enlaceGoogle}" target="_blank">ICS</a>
+            </div>
+            <a href="${enlaceGoogle}" target="_blank" class="btn-ver-evento">VER EVENTO &rarr;</a>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = htmlFinal;
+  })
+  .catch(error => {
+    console.error('Error al cargar los eventos:', error);
+    container.innerHTML = '<p style="text-align: center; color: red; padding: 20px;">Error al conectar con Google Calendar. Verifica tu clave de API.</p>';
+  });
 </script>
 
 </body>
