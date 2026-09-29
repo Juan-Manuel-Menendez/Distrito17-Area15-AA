@@ -461,15 +461,9 @@ function cargarEventos() {
 
         const titulo = item.summary || 'Sin título';
 
-        // CREACIÓN CORRECTA DEL ENLACE DE LA API PARA EL EVENTO ESPECÍFICO
-        let enlaceGoogle = '#';
-        if (item.id) {
-            let baseId = item.id.split('_')[0];
-            let rawData = `${baseId} ${CALENDAR_ID}`;
-            // Codificación exacta en Base64 compatible con la estructura de Google Calendar
-            let encodedId = btoa(unescape(encodeURIComponent(rawData))).replace(/=+$/, '');
-            enlaceGoogle = `https://calendar.google.com/calendar/event?eid=${encodedId}`;
-        }
+        // Solución definitiva y funcional: enlace directo a la vista pública del calendario del distrito
+        // Si el evento tiene un link web público nativo de Google lo usa, si no, abre el calendario general del distrito
+        let enlaceGoogle = item.htmlLink ? item.htmlLink : `https://calendar.google.com/calendar/embed?src=${encodeURIComponent(CALENDAR_ID)}`;
 
         const ubicacion = item.location ? `📍 ${item.location}` : '';
 
