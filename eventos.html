@@ -138,7 +138,6 @@ header {
   border: 1px solid #eaeaea;
 }
 
-/* Estilos para la barra de filtros de fechas */
 .filter-bar {
   display: flex;
   gap: 15px;
@@ -199,7 +198,6 @@ header {
   background-color: #444;
 }
 
-/* Estilo de fila de evento */
 .event-row {
   display: flex;
   align-items: flex-start;
@@ -211,7 +209,6 @@ header {
   border-bottom: none;
 }
 
-/* Cajita de fecha tipo bloque con año */
 .event-date-box {
   background: #eef2f7;
   border: 1px solid #d8e2ec;
@@ -251,7 +248,6 @@ header {
   margin-top: 2px;
 }
 
-/* Contenido del evento */
 .event-details {
   flex-grow: 1;
 }
@@ -284,7 +280,6 @@ header {
   text-decoration: underline;
 }
 
-/* Botón Ver Evento estilo negro redondeado */
 .btn-ver-evento {
   display: inline-block;
   background-color: #000000;
@@ -367,7 +362,6 @@ footer {
 </section>
 
 <main class="events-wrapper">
-  <!-- Barra de Filtros Interactivos por Fecha -->
   <div class="filter-bar">
     <div>
       <label for="fechaDesde">Desde: </label>
@@ -460,13 +454,23 @@ function cargarEventos() {
 
         const mesCorto = fechaObj.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '').toUpperCase();
         const diaNum = fechaObj.getDate();
-        const anioNum = fechaObj.getFullYear(); // Año dinámico
+        const anioNum = fechaObj.getFullYear();
 
         const esTodoElDia = !item.start.dateTime;
         let horarioTexto = esTodoElDia ? 'Todo el día' : fechaObj.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
 
         const titulo = item.summary || 'Sin título';
-        const enlaceGoogle = item.htmlLink || '#';
+
+        // CREACIÓN CORRECTA DEL ENLACE DE LA API PARA EL EVENTO ESPECÍFICO
+        let enlaceGoogle = '#';
+        if (item.id) {
+            let baseId = item.id.split('_')[0];
+            let rawData = `${baseId} ${CALENDAR_ID}`;
+            // Codificación exacta en Base64 compatible con la estructura de Google Calendar
+            let encodedId = btoa(unescape(encodeURIComponent(rawData))).replace(/=+$/, '');
+            enlaceGoogle = `https://calendar.google.com/calendar/event?eid=${encodedId}`;
+        }
+
         const ubicacion = item.location ? `📍 ${item.location}` : '';
 
         htmlFinal += `
